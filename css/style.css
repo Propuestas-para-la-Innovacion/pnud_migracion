@@ -245,7 +245,7 @@ body {
 
 a {
   text-decoration: none !important;
-  color: #46495F!important;
+  color: #0569b0!important;
   transition: 0.5s;
 }
 
@@ -277,7 +277,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #46495F!important;
+  color: #0569b0!important;
   font-weight: 600;
   line-height: 1.5;
   margin: 0 0 30px 0;
@@ -15485,7 +15485,7 @@ label.label-muted {
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #46495f!important;
+  color: #0569b0!important;
   opacity: 1; /* Firefox */
 }
 
@@ -19558,5 +19558,5 @@ label.checkbox {
   background-color: #FFF;
   border-radius: 60px;
   margin: 20px 0;
-  color: #46495F!important;
+  color: #0569b0!important;
 }
