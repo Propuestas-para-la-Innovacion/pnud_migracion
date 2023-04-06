@@ -1211,6 +1211,7 @@ span.middot {
   background-color: #E86762 !important;
 }
 
+
 .color {
   color: #1abc9c !important;
 }
@@ -4100,12 +4101,12 @@ html[xmlns] .slider-wrap {
 
 #header {
   position: relative;
-  background-color: #E86762;
+  background-color: #fff;
 }
 
 #header-wrap {
   position: relative;
-  background-color: #E86762;
+  background-color: #fff;
   width: 100%;
 }
 
@@ -4264,7 +4265,7 @@ html[xmlns] .slider-wrap {
   }
 
   .sticky-header.full-header #header-wrap {
-    border-bottom: 1px solid #E86762;
+    border-bottom: 1px solid #fff;
   }
 
   .sticky-header.semi-transparent {
@@ -4601,7 +4602,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
   display: block;
   line-height: 22px;
   padding: 14px 5px;
-  color: #fff!important;
+  color: #0569b0!important;
   font-weight: 700;
   font-size: 0.8125rem;
   letter-spacing: 1px;
@@ -4625,7 +4626,7 @@ body:not(.top-search-open) .top-search-parent #primary-menu-trigger {
 
 .menu-item:hover > .menu-link,
 .menu-item.current > .menu-link {
-  color: #F5AC4D!important;
+  color: #18496a!important;
   text-decoration: none!important;
 }
 
@@ -10145,7 +10146,7 @@ td.actions {
   -o-transition: .3s;
   transition: .3s;
   vertical-align: middle;
-  background: #E86762;
+  background: #0569b0;
   border-radius: 5px;
   border: none; }
   .btn i {
@@ -10157,14 +10158,14 @@ td.actions {
   color: white!important; }
 
 .btn::before {
-  background: #46495F ;
+  background: #18496a ;
   bottom: 0;
   content: "";
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
-  border: 1px solid #46495F ;
+  border: 1px solid #18496a ;
   -webkit-transform: scaleY(0);
   -ms-transform: scaleY(0);
   transform: scaleY(0);
@@ -19492,12 +19493,12 @@ label.checkbox {
 }
 
 .redes a{
-  color: #fff!important;
+  color: #0569b0!important;
   padding: 0 5px;
 }
 
 .redes a:hover{
-  color: #ffc107!important;
+  color: #18496a!important;
 }
 
 .transition1{
