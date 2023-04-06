@@ -64,23 +64,23 @@ permalink: "/empadronamiento/index.html"
                         </div>
                         <div class="col-lg-4 col-xl-4 col-sm-12 col-md-12 px-3">
                             <div id="reportes_parcial" style="display:block">
-                            
-                                <a target="_blank" href="" target="_blank"><div class="mb-20">
-                                    <img class="w-100" src="">
-                                    <h1 style="font-family:Arvo-Bold, sans-serif!important;font-size:20px"></h1>
-                                    <p style="font-family:Arvo-Regular, sans-serif!important;font-size:15px;color:rgb(70,73,96)!important"></p>
+                            {% for reporte in collections.reportes_empadronamiento | reverse | limit(3)%}
+                                <a target="_blank" href="{{reporte.data.link}}" target="_blank"><div class="mb-20">
+                                    <img class="w-100" src="{{reporte.data.image}}">
+                                    <h1 style="font-family:Arvo-Bold, sans-serif!important;font-size:20px">{{reporte.data.title}}</h1>
+                                    <p style="font-family:Arvo-Regular, sans-serif!important;font-size:15px;color:rgb(70,73,96)!important">{{reporte.data.description}}</p>
                                 </div></a>
-                            
+                            {% endfor %}
                             </div>
 
                             <div id="reportes_full" style="display:none">
-                            
-                                <a target="_blank" href="" target="_blank"><div class="mb-20"> 
-                                    <img class="w-100" src="">
-                                    <h1 style="font-family:Arvo-Bold, sans-serif!important;font-size:20px"></h1>
-                                    <p style="font-family:Arvo-Regular, sans-serif!important;font-size:15px;color:rgb(70,73,96)!important"></p>
+                            {% for reporte in collections.reportes_empadronamiento | reverse%}
+                                <a target="_blank" href="{{reporte.data.link}}" target="_blank"><div class="mb-20"> 
+                                    <img class="w-100" src="{{reporte.data.image}}">
+                                    <h1 style="font-family:Arvo-Bold, sans-serif!important;font-size:20px">{{reporte.data.title}}</h1>
+                                    <p style="font-family:Arvo-Regular, sans-serif!important;font-size:15px;color:rgb(70,73,96)!important">{{reporte.data.description}}</p>
                                 </div></a>
-                            
+                            {% endfor %}
                             </div>
 
 

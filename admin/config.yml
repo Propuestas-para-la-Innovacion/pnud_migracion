@@ -41,9 +41,9 @@ collections:
       - { name: "description", label: "Description" }
       - { name: "link", label: "Enlace de video" }
       - { name: "date", label: "Date", widget: "datetime" }
-  - name: "dashborad_empadronamiento" # Used in routes, e.g., /admin/collections/podcast
-    label: "Dashboard Empadronamiento" # Used in the UI
-    folder: "src/dashboard_empadronamiento" # The path to the folder where the documents are stored
+  - name: "dashboard" # Used in routes, e.g., /admin/collections/podcast
+    label: "Dashboard" # Used in the UI
+    folder: "src/dashboard" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     editor:
@@ -61,9 +61,9 @@ collections:
           widget: "image",
           required: false,
         }
-  - name: "reporte_empadronamiento" # Used in routes, e.g., /admin/collections/podcast
-    label: "Reportes de Empadronamiento" # Used in the UI
-    folder: "src/reportes_empadronamiento" # The path to the folder where the documents are stored
+  - name: "reportes" # Used in routes, e.g., /admin/collections/podcast
+    label: "Reportes" # Used in the UI
+    folder: "src/reportes" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     editor:
