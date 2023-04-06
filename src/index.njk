@@ -111,20 +111,20 @@ permalink: "index.html"
 
 							<h2 class="font-bold text-4xl border-b-2 border-blue-500 mb-4 pb-4" style="text-align:left;margin:1rem 0">Blogs</h2>
 
-							{% for evento in collections.eventos | reverse | limit(5) %}
+							{% for blog in collections.novedades | reverse | limit(5) %}
 					
 				
-							<a href="{{evento.url}}" class="flex border-b-2 pb-4 mb-4 text-current responsive">
-							<img src="{{ evento.data.image }}" alt="Evento" class="w-36">
+							<a href="{{blog.url}}" class="flex border-b-2 pb-4 mb-4 text-current responsive">
+							<img src="{{ blog.data.image }}" alt="Evento" class="w-36">
 							<div class="pl-8 my-auto" style="text-align:left">
 								<h5 class="font-bold text-lg">
-								{{evento.data.title }}
+								{{blog.data.title }}
 								</h5>
 								<span class="text-sm">
-								{{evento.data.date | dateFormat('DD/MM/YYYY')}}
+								{{blog.data.date | dateFormat('DD/MM/YYYY')}}
 								</span><br>
 								<span class="text-sm">
-								{{evento.data.description}}
+								{{blog.data.description}}
 								</span>
 							</div>
 							</a>
@@ -132,7 +132,7 @@ permalink: "index.html"
 							{% endfor %}
 
 							<div class="mb-6" style="display:flex; justify-content:flex-end">
-								<a href="/eventos/index.html">Más Blogs<i class="icon-arrow-right" style="margin-left:5px"></i></a>
+								<a href="/novedades/index.html">Más Blogs<i class="icon-arrow-right" style="margin-left:5px"></i></a>
 							</div>		
 				
 						</div>
