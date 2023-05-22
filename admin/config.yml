@@ -21,9 +21,8 @@ collections:
       - { name: "numeromig4", label: "Número de Migrantes" }
       - name: "paises"
         label: "Paises"
-        collapsed: false
+        allow_add: false
         max: 1
-        min: 1
         widget: list
         fields:
           - { label: "Pais 1", name: "pais1", widget: string }
