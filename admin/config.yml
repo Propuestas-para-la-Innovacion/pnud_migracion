@@ -21,14 +21,12 @@ collections:
       - { name: "numeromig4", label: "Número de Migrantes" }
       - name: "paises"
         label: "Paises"
-        allow_add: false
         widget: list
+        min: 1
         max: 1
-        default:
+        fields:
           - { label: "Pais 1", name: "pais1", widget: string }
           - { label: "Pais 2", name: "pais2", widget: string }
-        fields:
-
   - name: "novedades" # Used in routes, e.g., /admin/collections/blog
     label: "Novedades" # Used in the UI
     folder: "src/novedades" # The path to the folder where the documents are stored
