@@ -21,10 +21,10 @@ collections:
       - { name: "numeromig4", label: "Número de Migrantes" }
       - name: "paises"
         label: "Paises"
-        allow_add: false
+        allow_add: true
         max: 1
         widget: list
-        default:
+        fields:
           - { label: "Pais 1", name: "pais1", widget: string }
           - { label: "Pais 2", name: "pais2", widget: string }
   - name: estadisticas
