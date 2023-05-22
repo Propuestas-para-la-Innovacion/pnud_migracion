@@ -28,8 +28,7 @@ collections:
           - { label: "Pais 1", name: "pais1", widget: string }
           - { label: "Pais 2", name: "pais2", widget: string }
         fields:
-          - { label: "Pais 1", name: "pais1", widget: string }
-          - { label: "Pais 2", name: "pais2", widget: string }
+
   - name: "novedades" # Used in routes, e.g., /admin/collections/blog
     label: "Novedades" # Used in the UI
     folder: "src/novedades" # The path to the folder where the documents are stored
