@@ -14,16 +14,17 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     editor:
       preview: false # Disable the editor preview and use instead 'preview links'
-    - { name: "numeromig", label: "Número de Migrantes" }
-    - { name: "numeromig2", label: "Número de Migrantes" }
-    - { name: "numeromig3", label: "Número de Migrantes" }
-    - { name: "numeromig4", label: "Número de Migrantes" }
-    - name: "paises"
-      label: "Paises"
-      widget: list
-      fields:
-        - {label: "Pais 1", name: "pais1", widget: string}
-        - {label: "Pais 2", name: "pais2", widget: string}
+    fields: # The fields for each document, usually in front matter
+      - { name: "numeromig", label: "Número de Migrantes" }
+      - { name: "numeromig2", label: "Número de Migrantes" }
+      - { name: "numeromig3", label: "Número de Migrantes" }
+      - { name: "numeromig4", label: "Número de Migrantes" }
+      - name: "paises"
+        label: "Paises"
+        widget: list
+        fields:
+          - { label: "Pais 1", name: "pais1", widget: string }
+          - { label: "Pais 2", name: "pais2", widget: string }
   - name: estadisticas
     label: Estadísticas
     folder: "src/estadisticas" # The path to the folder where the documents are stored
@@ -31,8 +32,9 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     editor:
       preview: false # Disable the editor preview and use instead 'preview links'
-    - { name: "title", label: "Title" }
-    - { label: "Image", name: "image", widget: "image" }
+    fields: # The fields for each document, usually in front matter
+      - { name: "title", label: "Title" }
+      - { label: "Image", name: "image", widget: "image" }
   - name: "novedades" # Used in routes, e.g., /admin/collections/blog
     label: "Novedades" # Used in the UI
     folder: "src/novedades" # The path to the folder where the documents are stored
