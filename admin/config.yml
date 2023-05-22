@@ -23,6 +23,10 @@ collections:
         label: "Paises"
         allow_add: false
         widget: list
+        max: 1
+        default:
+          - { label: "Pais 1", name: "pais1", widget: string }
+          - { label: "Pais 2", name: "pais2", widget: string }
         fields:
           - { label: "Pais 1", name: "pais1", widget: string }
           - { label: "Pais 2", name: "pais2", widget: string }
