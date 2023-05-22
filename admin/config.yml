@@ -7,9 +7,9 @@ media_folder: "images/posts" # Media files will be stored in the repo under src/
 public_folder: "/images/posts" # The src attribute for uploaded media will begin with assets/images/posts
 
 collections:
-  - name: datos_resumen
+  - name: datosresumen
     label: Datos Resumen
-    folder: "src/datos_resumen" # The path to the folder where the documents are stored
+    folder: "src/datosresumen" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     editor:
