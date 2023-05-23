@@ -1,0 +1,98 @@
+{% extends "src/base.njk" %}
+
+{% block head %}
+<title>{{ title }}</title>
+<link rel="stylesheet" href="/css/maingrid.css" type="text/css" />
+{% endblock %}
+
+{% block content %}
+    
+    <!-- Content
+		============================================= -->
+		<section id="content px-4">
+			<div class="content-wrap">
+
+				<div class="container clearfix my-6">
+					<div class="row heading-block center">
+						<h2>{{title}}</h2>
+					</div>
+        </div>
+
+        <div class="container clearfix my-6">
+					<div class="row">
+						<div class="col-lg-4">
+              <div>
+                <canvas id="sexo"></canvas>
+              </div>
+            </div>
+					</div>
+        </div>
+
+      </div>
+    </section>
+
+{% endblock %}
+
+{% block body_javascripts %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+  // JavaScript
+  var datos = {
+    labels: ['Masculino', 'Femenino', 'No Binario', 'NS/NR'],
+    datasets: [{
+      data: [45, 40, 10, 5],
+      backgroundColor: ['#84B8DC', '#2A8BCF', '#0569B0', '#034675'],
+    }]
+  };
+
+  var opciones = {
+    tooltips: {
+      callbacks: {
+        label: function (tooltipItem, data) {
+          var dataset = data.datasets[tooltipItem.datasetIndex];
+          var value = dataset.data[tooltipItem.index];
+          return data.labels[tooltipItem.index] + ': ' + value + '%';
+        }
+      }
+    },
+    scales: {
+      xAxes: [{
+          gridLines: {
+            display: false
+          }
+      }],
+      yAxes: [{
+          gridLines: {
+            display: false
+          }
+      }]
+    },
+    plugins: {
+      legend: {
+        display: true,
+        position: 'right'
+      },
+      title: {
+        display: true,
+        text: 'Porcentaje de individuos según el Sexo',
+        color: '#46495F',
+        font: {
+          size: 20
+        }
+      }
+    }
+  };
+
+  var ctx = document.getElementById('sexo').getContext('2d');
+  var miGrafica = new Chart(ctx, {
+    type: 'doughnut',
+    data: datos,
+    options: opciones
+  });
+  </script>
+
+{% endblock %}

@@ -55,15 +55,20 @@ permalink: "index.html"
 					</div>
 
 					<div class="row my-4 align-items-center">
+						{% for estadistica in collections.estadisticas | limit(1)%}
 						<div class="col-lg-6 text-center">
-							{% for estadistica in collections.estadisticas | limit(1)%}
+							
 							<h1 style="font-size:65px;color:#46495F!important">{{estadistica.data.numeroregistrado}}</h1>
 							<h1 style="font-size:35px;color:#46495F!important">Individuos registrados en Esquipulas</h1>
-							{% endfor %}
+							
 						</div>
 						<div class="col-lg-6">
 							<img src="/elementos/03.png">
 						</div>
+						<div class="col-lg-12 my-4" style="text-align:end">
+							<a href="{{estadistica.url}}" class="btn">Ver todas las estadísticas</a>
+						</div>
+						{% endfor %}
 					</div>
 					
 
