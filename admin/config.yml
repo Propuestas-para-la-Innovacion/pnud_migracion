@@ -33,7 +33,7 @@ collections:
           name: "numeroregistrado",
           label: "Numero de individuos en situacion de movilidad humana registrados en Esquipulas",
           hint: "Individuos registrados en Esquipulas",
-          widget: "string",
+          widget: "int",
         }
       - name: "sexo"
         label: "Porcentaje de individuos según el Sexo"
@@ -41,8 +41,6 @@ collections:
         widget: "list"
         min: 1
         max: 1
-        allow_add: false
-        default: ["."]
         fields:
           - { label: "Femenino", name: "fem", widget: "number" }
           - { label: "Masculino", name: "masc", widget: "number" }
@@ -54,8 +52,6 @@ collections:
         widget: "list"
         min: 1
         max: 1
-        allow_add: false
-        default: ["."]
         fields:
           - { label: "0-10 niñez", name: "0a10", widget: "number" }
           - { label: "11-17 adolescencia", name: "11a17", widget: "number" }
@@ -75,8 +71,6 @@ collections:
         widget: "list"
         min: 1
         max: 1
-        allow_add: false
-        default: ["."]
         fields:
           - { label: "Guetemala", name: "gua", widget: "number" }
           - { label: "Honduras", name: "hon", widget: "number" }
@@ -94,8 +88,6 @@ collections:
         widget: "list"
         min: 1
         max: 1
-        allow_add: false
-        default: ["."]
         fields:
           - { label: "Estados Unidos", name: "usa", widget: "number" }
           - { label: "México", name: "mex", widget: "number" }
@@ -108,8 +100,6 @@ collections:
         widget: "list"
         min: 1
         max: 1
-        allow_add: false
-        default: ["."]
         fields:
           - { label: "Guetemala", name: "gua", widget: "number" }
           - { label: "Honduras", name: "hon", widget: "number" }
