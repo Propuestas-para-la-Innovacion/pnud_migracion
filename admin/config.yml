@@ -65,7 +65,6 @@ collections:
           - { label: "75-84", name: "75a84", widget: "number" }
           - { label: "85+", name: "85mas", widget: "number" }
           - { label: "NS/NR", name: "nsnr", widget: "number" }
-          - { label: "", name: "", widget: "number" }
       - name: "paisorigen"
         label: "País de origen"
         hint: "País de nacimiento de la persona."
