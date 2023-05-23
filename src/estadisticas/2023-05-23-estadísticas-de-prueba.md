@@ -9,8 +9,7 @@ sexo:
     nobi: 20
     nsnr: 5
 edad:
-  - "": 1
-    85mas: 5
+  - 85mas: 5
     11a17: 5
     nsnr: 5
     0a10: 5

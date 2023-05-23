@@ -1,0 +1,4 @@
+{
+    "tags": "estadisticas",
+    "permalink": "estadistica/{{ page.fileSlug }}/index.html"
+}

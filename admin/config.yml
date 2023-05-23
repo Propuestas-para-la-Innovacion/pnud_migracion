@@ -34,7 +34,7 @@ collections:
           name: "numeroregistrado",
           label: "Numero de individuos en situacion de movilidad humana registrados en Esquipulas",
           hint: "Individuos registrados en Esquipulas",
-          widget: "number",
+          widget: "string",
         }
       - name: "sexo"
         label: "Porcentaje de individuos según el Sexo"

@@ -239,7 +239,7 @@ li {
 
 body {
   line-height: 1.5;
-  color: #46495F;
+  color: #46495F!important;
   font-family: "Arvo-Regular", sans-serif !important;
 }
 
