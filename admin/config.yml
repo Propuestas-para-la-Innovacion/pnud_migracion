@@ -15,18 +15,34 @@ collections:
     editor:
       preview: false # Disable the editor preview and use instead 'preview links'
     fields: # The fields for each document, usually in front matter
-      - { name: "numeromig", label: "Número de Migrantes" }
-      - { name: "numeromig2", label: "Número de Migrantes" }
-      - { name: "numeromig3", label: "Número de Migrantes" }
-      - { name: "numeromig4", label: "Número de Migrantes" }
+      - label: "Año"
+        name: "ano"
+        widget: "select"
+        options:
+          - { label: "2023", value: "2023" }
+          - { label: "2022", value: "2022" }
+          - { label: "2021", value: "2021" }
+          - { label: "2020", value: "2020" }
+          - { label: "2019", value: "2019" }
+          - { label: "2018", value: "2018" }
+          - { label: "2017", value: "2017" }
+          - { label: "2016", value: "2016" }
+          - { label: "2015", value: "2015" }
+      - { name: "fuente", label: "Fuente de Información", widget: "string" }
+      - {
+          name: "numeroregistrado",
+          label: "Numero de individuos en situacion de movilidad humana registrados en Esquipulas",
+          hint: "Individuos registrados en Esquipulas",
+          widget: "string",
+        }
       - name: "paises"
         label: "Paises"
         widget: list
         min: 1
         max: 1
         fields:
-          - { label: "Pais 1", name: "pais1", widget: string }
-          - { label: "Pais 2", name: "pais2", widget: string }
+          - { label: "Pais 1", name: "pais1", widget: "string" }
+          - { label: "Pais 2", name: "pais2", widget: "string" }
   - name: "novedades" # Used in routes, e.g., /admin/collections/blog
     label: "Novedades" # Used in the UI
     folder: "src/novedades" # The path to the folder where the documents are stored
