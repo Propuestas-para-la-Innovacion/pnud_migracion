@@ -35,14 +35,17 @@ collections:
           hint: "Individuos registrados en Esquipulas",
           widget: "string",
         }
-      - name: "paises"
-        label: "Paises"
-        widget: list
-        min: 1
-        max: 1
+      - name: "sexo",
+        label: "Porcentaje de individuos según el Sexo",
+        hint: "Sexo de la persona, según auto identificación",
+        widget: "list",
+        min: "1",
+        max: "1",
         fields:
-          - { label: "Pais 1", name: "pais1", widget: "string" }
-          - { label: "Pais 2", name: "pais2", widget: "string" }
+          - { label: "Femenino", name: "fem", widget: "number" }
+          - { label: "Masculino", name: "masc", widget: "number" }
+          - { label: "No binario", name: "nobi", widget: "number" }
+          - { label: "NS/NR", name: "nsnr", widget: "number" }
   - name: "novedades" # Used in routes, e.g., /admin/collections/blog
     label: "Novedades" # Used in the UI
     folder: "src/novedades" # The path to the folder where the documents are stored
