@@ -69,7 +69,58 @@ collections:
           - { label: "85+", name: "85mas", widget: "number" }
           - { label: "NS/NR", name: "nsnr", widget: "number" }
           - { label: "", name: "", widget: "number" }
-
+      - name: "paisorigen"
+        label: "País de origen"
+        hint: "País de nacimiento de la persona."
+        widget: "list"
+        min: 1
+        max: 1
+        allow_add: false
+        default: ["."]
+        fields:
+          - { label: "Guetemala", name: "gua", widget: "number" }
+          - { label: "Honduras", name: "hon", widget: "number" }
+          - { label: "El Salvador", name: "sal", widget: "number" }
+          - { label: "Haití", name: "hai", widget: "number" }
+          - { label: "Ecuador", name: "ecu", widget: "number" }
+          - { label: "Venezuela", name: "ven", widget: "number" }
+          - { label: "Colombia", name: "col", widget: "number" }
+          - { label: "República Dominicana", name: "repdom", widget: "number" }
+          - { label: "Otro(s)", name: "otros", widget: "number" }
+          - { label: "NS/NR", name: "nsnr", widget: "number" }
+      - name: "paisdestino"
+        label: "País de destino"
+        hint: "País al cual desea llegar"
+        widget: "list"
+        min: 1
+        max: 1
+        allow_add: false
+        default: ["."]
+        fields:
+          - { label: "Estados Unidos", name: "usa", widget: "number" }
+          - { label: "México", name: "mex", widget: "number" }
+          - { label: "Canadá", name: "can", widget: "number" }
+          - { label: "Otro(s)", name: "otros", widget: "number" }
+          - { label: "NS/NR", name: "nsnr", widget: "number" }
+      - name: "nacionalidad"
+        label: "Nacionalidad"
+        hint: "Vínculo jurídico entre la persona y su Estado, adquirido por nacimiento, declaración, matrimonio, naturalización u otras formas permitidas según la legislación nacional ."
+        widget: "list"
+        min: 1
+        max: 1
+        allow_add: false
+        default: ["."]
+        fields:
+          - { label: "Guetemala", name: "gua", widget: "number" }
+          - { label: "Honduras", name: "hon", widget: "number" }
+          - { label: "El Salvador", name: "sal", widget: "number" }
+          - { label: "Haití", name: "hai", widget: "number" }
+          - { label: "Ecuador", name: "ecu", widget: "number" }
+          - { label: "Venezuela", name: "ven", widget: "number" }
+          - { label: "Colombia", name: "col", widget: "number" }
+          - { label: "República Dominicana", name: "repdom", widget: "number" }
+          - { label: "Otro(s)", name: "otros", widget: "number" }
+          - { label: "NS/NR", name: "nsnr", widget: "number" }
   - name: "novedades" # Used in routes, e.g., /admin/collections/blog
     label: "Novedades" # Used in the UI
     folder: "src/novedades" # The path to the folder where the documents are stored
