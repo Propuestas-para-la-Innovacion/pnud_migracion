@@ -49,20 +49,20 @@ permalink: "index.html"
 		<!-- Nosotros
 		============================================= -->
 
-				<div class="container clearfix pt-100">
+				<div class="container clearfix pt-100 my-6">
 					<div class="heading-block center">
 						<h2>Lorem Ipsum</h2>
 					</div>
 
-					<div class="row">
+					<div class="row my-4 align-items-center">
 						<div class="col-lg-6 text-center">
 							{% for estadistica in collections.estadisticas | limit(1)%}
-							<h1 style="font-size:65px">{{estadistica.data.numeroregistrado}}</h1>
-							<h1 style="font-size:35px">Individuos registrados en Esquipulas</h1>
+							<h1 style="font-size:65px;color:#46495F!important">{{estadistica.data.numeroregistrado}}</h1>
+							<h1 style="font-size:35px;color:#46495F!important">Individuos registrados en Esquipulas</h1>
 							{% endfor %}
 						</div>
 						<div class="col-lg-6">
-							<img src="">
+							<img src="/elementos/03.png">
 						</div>
 					</div>
 					
