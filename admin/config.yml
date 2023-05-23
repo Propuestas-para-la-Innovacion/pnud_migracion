@@ -42,10 +42,28 @@ collections:
         min: 1
         max: 1
         fields:
-          - { label: "Femenino", name: "fem", widget: "number" }
-          - { label: "Masculino", name: "masc", widget: "number" }
-          - { label: "No binario", name: "nobi", widget: "number" }
-          - { label: "NS/NR", name: "nsnr", widget: "number" }
+          - {
+              label: "Femenino",
+              name: "fem",
+              widget: "number",
+              min: 0,
+              max: 100,
+            }
+          - {
+              label: "Masculino",
+              name: "masc",
+              widget: "number",
+              min: 0,
+              max: 100,
+            }
+          - {
+              label: "No binario",
+              name: "nobi",
+              widget: "number",
+              min: 0,
+              max: 100,
+            }
+          - { label: "NS/NR", name: "nsnr", widget: "number", min: 0, max: 100 }
   - name: "novedades" # Used in routes, e.g., /admin/collections/blog
     label: "Novedades" # Used in the UI
     folder: "src/novedades" # The path to the folder where the documents are stored
