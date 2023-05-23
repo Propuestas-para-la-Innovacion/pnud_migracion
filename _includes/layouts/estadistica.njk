@@ -63,6 +63,18 @@
     <div id="sexonobi" style="display:none">{{sexo[0].nobi}}</div>
     <div id="sexonsnr" style="display:none">{{sexo[0].nsnr}}</div>
 
+    <div id="edad85mas" style="display:none">{{edad[0].85mas}}</div>
+    <div id="edad11a17" style="display:none">{{edad[0].11a17}}</div>
+    <div id="edadnsnr" style="display:none">{{edad[0].nsnr}}</div>
+    <div id="edad0a10" style="display:none">{{edad[0].0a10}}</div>
+    <div id="edad18a24" style="display:none">{{edad[0].18a24}}</div>
+    <div id="edad55a64" style="display:none">{{edad[0].55a64}}</div>
+    <div id="edad45a54" style="display:none">{{edad[0].45a54}}</div>
+    <div id="edad35a44" style="display:none">{{edad[0].35a44}}</div>
+    <div id="edad25a34" style="display:none">{{edad[0].25a34}}</div>
+    <div id="edad75a84" style="display:none">{{edad[0].75a84}}</div>
+    <div id="edad65a74" style="display:none">{{edad[0].65a74}}</div>
+
 {% endblock %}
 
 {% block body_javascripts %}
@@ -118,6 +130,66 @@
     };
 
     var ctx = document.getElementById('sexo').getContext('2d');
+    var miGrafica = new Chart(ctx, {
+      type: 'doughnut',
+      data: datos,
+      options: opciones
+    });
+  </script>
+
+  <script>
+    // JavaScript para grafica de edad
+
+    var edad85mas = parseInt(document.getElementById('edad85mas').innerText);
+    var edad11a17 = parseInt(document.getElementById('edad11a17').innerText);
+    var edadnsnr = parseInt(document.getElementById('edadnsnr').innerText);
+    var edad0a10 = parseInt(document.getElementById('edad0a10').innerText);
+    var edad18a24 = parseInt(document.getElementById('edad18a24').innerText);
+    var edad55a64 = parseInt(document.getElementById('edad55a64').innerText);
+    var edad45a54 = parseInt(document.getElementById('edad45a54').innerText);
+    var edad35a44 = parseInt(document.getElementById('edad35a44').innerText);
+    var edad25a34 = parseInt(document.getElementById('edad25a34').innerText);
+    var edad75a84 = parseInt(document.getElementById('edad75a84').innerText);
+    var edad65a74 = parseInt(document.getElementById('edad65a74').innerText);
+
+    var datos = {
+      labels: ['0-10 niñez', '11-17 adolescencia', '18-24 jóvenes adultos', '25-34 adultos', '35-44', '45-54', '55-64', '65-74 adultos mayores', '75-84', '85+', 'NS/NR'],
+      datasets: [{
+        data: [edad0a10, edad11a17, edad18a24, edad25a34, edad35a44, edad45a54, edad55a64, edad65a74, edad75a84, edad85mas, edadnsnr],
+        backgroundColor: ['#84B8DC', '#2A8BCF', '#0569B0', '#034675', '#023F6A'],
+      }]
+    };
+
+    var opciones = {
+      scales: {
+        xAxes: [{
+            gridLines: {
+              display: false
+            }
+        }],
+        yAxes: [{
+            gridLines: {
+              display: false
+            }
+        }]
+      },
+      plugins: {
+        legend: {
+          display: true,
+          position: 'right'
+        },
+        title: {
+          display: true,
+          text: 'Edad',
+          color: '#46495F',
+          font: {
+            size: 20
+          }
+        },
+      }
+    };
+
+    var ctx = document.getElementById('edad').getContext('2d');
     var miGrafica = new Chart(ctx, {
       type: 'doughnut',
       data: datos,
