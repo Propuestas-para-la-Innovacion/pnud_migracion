@@ -44,28 +44,83 @@ collections:
         allow_add: false
         default: ["."]
         fields:
-          - {
-              label: "Femenino",
-              name: "fem",
-              widget: "number",
-              min: 0,
-              max: 100,
-            }
-          - {
-              label: "Masculino",
-              name: "masc",
-              widget: "number",
-              min: 0,
-              max: 100,
-            }
-          - {
-              label: "No binario",
-              name: "nobi",
-              widget: "number",
-              min: 0,
-              max: 100,
-            }
-          - { label: "NS/NR", name: "nsnr", widget: "number", min: 0, max: 100 }
+          - { label: "Femenino", name: "fem", widget: "number" }
+          - { label: "Masculino", name: "masc", widget: "number" }
+          - { label: "No binario", name: "nobi", widget: "number" }
+          - { label: "NS/NR", name: "nsnr", widget: "number" }
+      - name: "edad"
+        label: "Edad"
+        hint: "Se utilizan rangos de edad de la persona de acuerdo con estándares de Naciones Unidas."
+        widget: "list"
+        min: 1
+        max: 1
+        allow_add: false
+        default: ["."]
+        fields:
+          - { label: "0-10 niñez", name: "0a10", widget: "number" }
+          - { label: "11-17 adolescencia", name: "11a17", widget: "number" }
+          - { label: "18-24 jóvenes adultos", name: "18a24", widget: "number" }
+          - { label: "25-34 adultos", name: "25a34", widget: "number" }
+          - { label: "35-44", name: "35a44", widget: "number" }
+          - { label: "45-54", name: "45a54", widget: "number" }
+          - { label: "55-64", name: "55a64", widget: "number" }
+          - { label: "65-74 adultos mayores", name: "", widget: "number" }
+          - { label: "75-84", name: "75a84", widget: "number" }
+          - { label: "85+", name: "85mas", widget: "number" }
+          - { label: "NS/NR", name: "nsnr", widget: "number" }
+          - { label: "", name: "", widget: "number" }
+      - name: "paisorigen"
+        label: "País de origen"
+        hint: "País de nacimiento de la persona."
+        widget: "list"
+        min: 1
+        max: 1
+        allow_add: false
+        default: ["."]
+        fields:
+          - { label: "Guetemala", name: "gua", widget: "number" }
+          - { label: "Honduras", name: "hon", widget: "number" }
+          - { label: "El Salvador", name: "sal", widget: "number" }
+          - { label: "Haití", name: "hai", widget: "number" }
+          - { label: "Ecuador", name: "ecu", widget: "number" }
+          - { label: "Venezuela", name: "ven", widget: "number" }
+          - { label: "Colombia", name: "col", widget: "number" }
+          - { label: "República Dominicana", name: "repdom", widget: "number" }
+          - { label: "Otro(s)", name: "otros", widget: "number" }
+          - { label: "NS/NR", name: "nsnr", widget: "number" }
+      - name: "paisdestino"
+        label: "País de destino"
+        hint: "País al cual desea llegar."
+        widget: "list"
+        min: 1
+        max: 1
+        allow_add: false
+        default: ["."]
+        fields:
+          - { label: "Estados Unidos", name: "usa", widget: "number" }
+          - { label: "México", name: "mex", widget: "number" }
+          - { label: "Canadá", name: "can", widget: "number" }
+          - { label: "Otro(s)", name: "otros", widget: "number" }
+          - { label: "NS/NR", name: "nsnr", widget: "number" }
+      - name: "nacionalidad"
+        label: "Nacionalidad"
+        hint: "Vínculo jurídico entre la persona y su Estado, adquirido por nacimiento, declaración, matrimonio, naturalización u otras formas permitidas según la legislación nacional ."
+        widget: "list"
+        min: 1
+        max: 1
+        allow_add: false
+        default: ["."]
+        fields:
+          - { label: "Guetemala", name: "gua", widget: "number" }
+          - { label: "Honduras", name: "hon", widget: "number" }
+          - { label: "El Salvador", name: "sal", widget: "number" }
+          - { label: "Haití", name: "hai", widget: "number" }
+          - { label: "Ecuador", name: "ecu", widget: "number" }
+          - { label: "Venezuela", name: "ven", widget: "number" }
+          - { label: "Colombia", name: "col", widget: "number" }
+          - { label: "República Dominicana", name: "repdom", widget: "number" }
+          - { label: "Otro(s)", name: "otros", widget: "number" }
+          - { label: "NS/NR", name: "nsnr", widget: "number" }
   - name: "novedades" # Used in routes, e.g., /admin/collections/blog
     label: "Novedades" # Used in the UI
     folder: "src/novedades" # The path to the folder where the documents are stored
