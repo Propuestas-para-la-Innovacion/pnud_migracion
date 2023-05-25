@@ -154,7 +154,15 @@
             size: 20
           }
         },
-      }
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              var value = context.raw;
+              return ' ' + value + ' %';
+            }
+          }
+        },
+      },
     };
 
     var ctx = document.getElementById('sexo').getContext('2d');
@@ -214,6 +222,14 @@
             size: 20
           }
         },
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              var value = context.raw;
+              return ' ' + value + ' %';
+            }
+          }
+        },
       }
     };
 
@@ -240,9 +256,9 @@
     var nacven = parseInt(document.getElementById('nacven').innerText);
 
     var datos = {
-      labels: ['Colombia', 'República Dominicana', 'Honduras', 'NS/NR', 'Haití', 'Otros', 'Guatemala', 'Ecuador', 'Salvador', 'Venezuela'],
+      labels: ['Colombia', 'República Dominicana', 'Honduras', 'Haití', 'Guatemala', 'Ecuador', 'El Salvador', 'Venezuela', 'Otros', 'NS/NR'],
       datasets: [{
-        data: [naccol, nacrepdom, nachon, nacnsnr, nachai, nacotros, nacgua, nacecu, nacsal, nacven],
+        data: [naccol, nacrepdom, nachon, nachai, nacgua, nacecu, nacsal, nacven, nacotros, nacnsnr],
         backgroundColor: ['#84B8DC', '#2A8BCF', '#0569B0', '#034675', '#023F6A'],
       }]
     };
@@ -273,6 +289,14 @@
             size: 20
           }
         },
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              var value = context.raw;
+              return ' ' + value + ' %';
+            }
+          }
+        },
       }
     };
 
@@ -299,9 +323,9 @@
     var origenven = parseInt(document.getElementById('origenven').innerText);
 
     var datos = {
-      labels: ['Colombia', 'República Dominicana', 'Honduras', 'NS/NR', 'Haití', 'Otros', 'Guatemala', 'Ecuador', 'Salvador', 'Venezuela'],
+      labels: ['Colombia', 'República Dominicana', 'Honduras', 'Haití', 'Guatemala', 'Ecuador', 'El Salvador', 'Venezuela', 'Otros', 'NS/NR'],
       datasets: [{
-        data: [origencol, origenrepdom, origenhon, origennsnr, origenhai, origenotros, origengua, origenecu, origensal, origenven],
+        data: [origencol, origenrepdom, origenhon, origenhai, origengua, origenecu, origensal, origenven, origenotros, origennsnr],
         backgroundColor: ['#84B8DC', '#2A8BCF', '#0569B0', '#034675', '#023F6A'],
       }]
     };
@@ -332,6 +356,14 @@
             size: 20
           }
         },
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              var value = context.raw;
+              return ' ' + value + ' %';
+            }
+          }
+        },
       }
     };
 
@@ -354,9 +386,9 @@
 
 
     var datos = {
-      labels: ['Estados Unidos', 'México', 'Canada', 'NS/NR', 'Otros'],
+      labels: ['Estados Unidos', 'México', 'Canada', 'Otros', 'NS/NR'],
       datasets: [{
-        data: [destinousa, destinomex, destinocan, destinonsnr, destinootros],
+        data: [destinousa, destinomex, destinocan, destinootros, destinonsnr],
         backgroundColor: ['#84B8DC', '#2A8BCF', '#0569B0', '#034675', '#023F6A'],
       }]
     };
@@ -385,6 +417,14 @@
           color: '#46495F',
           font: {
             size: 20
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              var value = context.raw;
+              return ' ' + value + ' %';
+            }
           }
         },
       }
