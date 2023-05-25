@@ -75,6 +75,34 @@
     <div id="edad75a84" style="display:none">{{edad[0].75a84}}</div>
     <div id="edad65a74" style="display:none">{{edad[0].65a74}}</div>
 
+    <div id="naccol" style="display:none">{{nacionalidad[0].col}}</div>
+    <div id="nacrepdom" style="display:none">{{nacionalidad[0].repdom}}</div>
+    <div id="nachon" style="display:none">{{nacionalidad[0].hon}}</div>
+    <div id="nacnsnr" style="display:none">{{nacionalidad[0].nsnr}}</div>
+    <div id="nachai" style="display:none">{{nacionalidad[0].hai}}</div>
+    <div id="nacotros" style="display:none">{{nacionalidad[0].otros}}</div>
+    <div id="nacgua" style="display:none">{{nacionalidad[0].gua}}</div>
+    <div id="nacecu" style="display:none">{{nacionalidad[0].ecu}}</div>
+    <div id="nacsal" style="display:none">{{nacionalidad[0].sal}}</div>
+    <div id="nacven" style="display:none">{{nacionalidad[0].ven}}</div>
+
+    <div id="origencol" style="display:none">{{paisorigen[0].col}}</div>
+    <div id="origenrepdom" style="display:none">{{paisorigen[0].repdom}}</div>
+    <div id="origenhon" style="display:none">{{paisorigen[0].hon}}</div>
+    <div id="origennsnr" style="display:none">{{paisorigen[0].nsnr}}</div>
+    <div id="origenhai" style="display:none">{{paisorigen[0].hai}}</div>
+    <div id="origenotros" style="display:none">{{paisorigen[0].otros}}</div>
+    <div id="origengua" style="display:none">{{paisorigen[0].gua}}</div>
+    <div id="origenecu" style="display:none">{{paisorigen[0].ecu}}</div>
+    <div id="origensal" style="display:none">{{paisorigen[0].sal}}</div>
+    <div id="origenven" style="display:none">{{paisorigen[0].ven}}</div>
+
+    <div id="destinousa" style="display:none">{{paisdestino[0].usa}}</div>
+    <div id="destinomex" style="display:none">{{paisdestino[0].mex}}</div>
+    <div id="destinocan" style="display:none">{{paisdestino[0].can}}</div>
+    <div id="destinonsnr" style="display:none">{{paisdestino[0].nsnr}}</div>
+    <div id="destinootros" style="display:none">{{paisdestino[0].otros}}</div>
+
 {% endblock %}
 
 {% block body_javascripts %}
@@ -190,6 +218,179 @@
     };
 
     var ctx = document.getElementById('edad').getContext('2d');
+    var miGrafica = new Chart(ctx, {
+      type: 'doughnut',
+      data: datos,
+      options: opciones
+    });
+  </script>
+
+  <script>
+    // JavaScript para grafica de nacionaldiad
+
+    var naccol = parseInt(document.getElementById('naccol').innerText);
+    var nacrepdom = parseInt(document.getElementById('nacrepdom').innerText);
+    var nachon = parseInt(document.getElementById('nachon').innerText);
+    var nacnsnr = parseInt(document.getElementById('nacnsnr').innerText);
+    var nachai = parseInt(document.getElementById('nachai').innerText);
+    var nacotros = parseInt(document.getElementById('nacotros').innerText);
+    var nacgua = parseInt(document.getElementById('nacgua').innerText);
+    var nacecu = parseInt(document.getElementById('nacecu').innerText);
+    var nacsal = parseInt(document.getElementById('nacsal').innerText);
+    var nacven = parseInt(document.getElementById('nacven').innerText);
+
+    var datos = {
+      labels: ['Colombia', 'República Dominicana', 'Honduras', 'NS/NR', 'Haití', 'Otros', 'Guatemala', 'Ecuador', 'Salvador', 'Venezuela'],
+      datasets: [{
+        data: [naccol, nacrepdom, nachon, nacnsnr, nachai, nacotros, nacgua, nacecu, nacsal, nacven],
+        backgroundColor: ['#84B8DC', '#2A8BCF', '#0569B0', '#034675', '#023F6A'],
+      }]
+    };
+
+    var opciones = {
+      scales: {
+        xAxes: [{
+            gridLines: {
+              display: false
+            }
+        }],
+        yAxes: [{
+            gridLines: {
+              display: false
+            }
+        }]
+      },
+      plugins: {
+        legend: {
+          display: true,
+          position: 'right'
+        },
+        title: {
+          display: true,
+          text: 'Nacionalidad',
+          color: '#46495F',
+          font: {
+            size: 20
+          }
+        },
+      }
+    };
+
+    var ctx = document.getElementById('nacionalidad').getContext('2d');
+    var miGrafica = new Chart(ctx, {
+      type: 'doughnut',
+      data: datos,
+      options: opciones
+    });
+  </script>
+
+  <script>
+    // JavaScript para grafica de pais de origen
+
+    var origencol = parseInt(document.getElementById('origencol').innerText);
+    var origenrepdom = parseInt(document.getElementById('origenrepdom').innerText);
+    var origenhon = parseInt(document.getElementById('origenhon').innerText);
+    var origennsnr = parseInt(document.getElementById('origennsnr').innerText);
+    var origenhai = parseInt(document.getElementById('origenhai').innerText);
+    var origenotros = parseInt(document.getElementById('origenotros').innerText);
+    var origengua = parseInt(document.getElementById('origengua').innerText);
+    var origenecu = parseInt(document.getElementById('origenecu').innerText);
+    var origensal = parseInt(document.getElementById('origensal').innerText);
+    var origenven = parseInt(document.getElementById('origenven').innerText);
+
+    var datos = {
+      labels: ['Colombia', 'República Dominicana', 'Honduras', 'NS/NR', 'Haití', 'Otros', 'Guatemala', 'Ecuador', 'Salvador', 'Venezuela'],
+      datasets: [{
+        data: [origencol, origenrepdom, origenhon, origennsnr, origenhai, origenotros, origengua, origenecu, origensal, origenven],
+        backgroundColor: ['#84B8DC', '#2A8BCF', '#0569B0', '#034675', '#023F6A'],
+      }]
+    };
+
+    var opciones = {
+      scales: {
+        xAxes: [{
+            gridLines: {
+              display: false
+            }
+        }],
+        yAxes: [{
+            gridLines: {
+              display: false
+            }
+        }]
+      },
+      plugins: {
+        legend: {
+          display: true,
+          position: 'right'
+        },
+        title: {
+          display: true,
+          text: 'País de origen',
+          color: '#46495F',
+          font: {
+            size: 20
+          }
+        },
+      }
+    };
+
+    var ctx = document.getElementById('paisorigen').getContext('2d');
+    var miGrafica = new Chart(ctx, {
+      type: 'doughnut',
+      data: datos,
+      options: opciones
+    });
+  </script>
+
+  <script>
+    // JavaScript para grafica de pais de destino
+
+    var destinousa = parseInt(document.getElementById('destinousa').innerText);
+    var destinomex = parseInt(document.getElementById('destinomex').innerText);
+    var destinocan = parseInt(document.getElementById('destinocan').innerText);
+    var destinonsnr = parseInt(document.getElementById('destinonsnr').innerText);
+    var destinootros = parseInt(document.getElementById('destinootros').innerText);
+
+
+    var datos = {
+      labels: ['Estados Unidos', 'México', 'Canada', 'NS/NR', 'Otros'],
+      datasets: [{
+        data: [destinousa, destinomex, destinocan, destinonsnr, destinootros],
+        backgroundColor: ['#84B8DC', '#2A8BCF', '#0569B0', '#034675', '#023F6A'],
+      }]
+    };
+
+    var opciones = {
+      scales: {
+        xAxes: [{
+            gridLines: {
+              display: false
+            }
+        }],
+        yAxes: [{
+            gridLines: {
+              display: false
+            }
+        }]
+      },
+      plugins: {
+        legend: {
+          display: true,
+          position: 'right'
+        },
+        title: {
+          display: true,
+          text: 'País de destino',
+          color: '#46495F',
+          font: {
+            size: 20
+          }
+        },
+      }
+    };
+
+    var ctx = document.getElementById('paisdestino').getContext('2d');
     var miGrafica = new Chart(ctx, {
       type: 'doughnut',
       data: datos,
