@@ -43,46 +43,97 @@
 		<section id="content px-4">
 			<div class="content-wrap">
 
-				<div class="container clearfix my-6">
-					<div class="row heading-block center">
-						<h2>{{title}} </h2>
-					</div>
+        <div class="container clearfix my-6">
+            <div class="row p-0">
+              <div class="tab my-4 p-0">
+                <button class="tablinks btn" onclick="openTab(event, 'ano2020')" id="defaultOpen">2020</button>
+                <button class="tablinks btn" onclick="openTab(event, 'ano2021')">2021</button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="container clearfix my-6">
-					<div class="row">
-						
-            <div class="col-lg-4">
-              <div>
-                <canvas id="sexo"></canvas>
-              </div>   
-            </div>
+        <div id="ano2020" class="tabcontent" >
+          <div class="container clearfix my-4">
+            <div class="row">
 
-            <div class="col-lg-4">
-              <div>
-                <canvas id="edad"></canvas>
-              </div>   
-            </div>
+              
+              <div class="col-lg-4">
+                <div>
+                  <canvas id="sexo"></canvas>
+                </div>   
+              </div>
 
-            <div class="col-lg-4">
-              <div>
-                <canvas id="nacionalidad"></canvas>
-              </div>   
-            </div>
+              <div class="col-lg-4">
+                <div>
+                  <canvas id="edad"></canvas>
+                </div>   
+              </div>
 
-            <div class="col-lg-6">
-              <div>
-                <canvas id="paisorigen"></canvas>
-              </div>   
-            </div>
+              <div class="col-lg-4">
+                <div>
+                  <canvas id="nacionalidad"></canvas>
+                </div>   
+              </div>
 
-            <div class="col-lg-6">
-              <div>
-                <canvas id="paisdestino"></canvas>
-              </div>   
-            </div>
+              <div class="col-lg-6">
+                <div>
+                  <canvas id="paisorigen"></canvas>
+                </div>   
+              </div>
 
-					</div>
+              <div class="col-lg-6">
+                <div>
+                  <canvas id="paisdestino"></canvas>
+                </div>   
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div id="ano2021" class="tabcontent">
+          <div class="container clearfix my-4">
+            <div class="row">
+
+              <div class="col-lg-4">
+                <div>
+                  Hola
+                </div>   
+              </div>
+              
+              <div class="col-lg-4">
+                <div>
+                  <canvas id="sexo2"></canvas>
+                </div>   
+              </div>
+
+              <div class="col-lg-4">
+                <div>
+                  <canvas id="edad2"></canvas>
+                </div>   
+              </div>
+
+              <div class="col-lg-4">
+                <div>
+                  <canvas id="nacionalidad2"></canvas>
+                </div>   
+              </div>
+
+              <div class="col-lg-6">
+                <div>
+                  <canvas id="paisorigen2"></canvas>
+                </div>   
+              </div>
+
+              <div class="col-lg-6">
+                <div>
+                  <canvas id="paisdestino2"></canvas>
+                </div>   
+              </div>
+
+            </div>
+          </div>
         </div>
 
       </div>
@@ -467,6 +518,25 @@
       data: datos,
       options: opciones
     });
+  </script>
+
+
+  <script>
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+  function openTab(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
   </script>
 
 {% endblock %}
