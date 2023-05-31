@@ -19591,7 +19591,8 @@ label.checkbox {
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: #aaa;
+  background-color: #0569B0;
+  color: #fff!important;
 }
 
 /* Style the tab content */
