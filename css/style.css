@@ -277,7 +277,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #46495F;
+  color: #19486a;
   font-weight: 600;
   line-height: 1.5;
   margin: 0 0 30px 0;
@@ -10146,7 +10146,7 @@ td.actions {
   -o-transition: .3s;
   transition: .3s;
   vertical-align: middle;
-  background: #0569b0;
+  background: #18496a;
   border-radius: 5px;
   border: none; }
   .btn i {
@@ -10158,14 +10158,14 @@ td.actions {
   color: white!important; }
 
 .btn::before {
-  background: #18496a ;
+  background: #0569b0 ;
   bottom: 0;
   content: "";
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
-  border: 1px solid #18496a ;
+  border: 1px solid #0569b0 ;
   -webkit-transform: scaleY(0);
   -ms-transform: scaleY(0);
   transform: scaleY(0);
