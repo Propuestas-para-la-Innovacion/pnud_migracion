@@ -38,12 +38,19 @@
 		<section id="content px-4">
 			<div class="content-wrap">
 
-        <div class="container clearfix my-6">
-            <div class="row p-0">
-              <div class="tab my-4 p-0">
-                <button class="tablinks btn" onclick="openTab(event, 'ano2020')" id="defaultOpen">2020</button>
-                <button class="tablinks btn" onclick="openTab(event, 'ano2021')">2021</button>
+        <div class="container clearfix mt-6 my-4">
+            <div class="row p-0 justify-content-center">
+              <div class="col-lg-12 text-center">
+                <h1 style="font-size:30px;color:#19486a!important">Movilidad Humana Guatemala - Esquipulas</h1>
               </div>
+            </div>
+          </div>
+
+        <div class="container clearfix my-4">
+          <div class="row p-0">
+            <div class="tab my-4 p-0">
+              <button class="tablinks btn" onclick="openTab(event, 'ano2020')" id="defaultOpen">2020</button>
+              <button class="tablinks btn" onclick="openTab(event, 'ano2021')">2021</button>
             </div>
           </div>
         </div>
@@ -52,12 +59,56 @@
           <div class="container clearfix my-4">
             <div class="row">
 
+              <div class="col-lg-4 center-c">
+                <h1 id="numtotalstring" style="font-size:70px;color:#19486a!important">{{numeroregistrado}}</h1>
+                <br>
+                <p style="font-size:20px;font-weight: 400!important;color:#19486a!important">
+                  Número de individuos en situación de movilidad Humana
+                  registrados en esquipulas
+                </p>
+                <br>
+                <p style="font-size:20px;font-weight: 400!important;color:#19486a!important">Datos: {{fuente}}</p>
+                <br>
+              </div>
+
+              <div id="numtotal" style="display:none"></div>
               
               <div class="col-lg-4">
                 <div>
                   <canvas id="sexo"></canvas>
                 </div>   
               </div>
+
+              <div class="col-lg-4 center-c">
+                <p style="font-size:18px;font-weight: 600!important;color:#19486a!important">Sexo de la persona, según auto identificación</p>
+                <br>
+                <table class="tabla-estadisticas">
+                  <tbody>
+                    <tr>
+                      <td class="d-flex"><img src="/elementos/iconos_estadisticas/PNUD 2-20.png" style="width:25px"><p class="tabla-p">Femenino</p></td>
+                      <td>{{sexo[0].fem}}%</td>
+                      <td id="numsexofem"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><img src="/elementos/iconos_estadisticas/PNUD 2-21.png" style="width:25px"><p class="tabla-p">Masculino</p></td>
+                      <td>{{sexo[0].masc}}%</td>
+                      <td id="numsexomasc"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><img src="/elementos/iconos_estadisticas/PNUD 2-22.png" style="width:25px"><p class="tabla-p">No Binario</p></td>
+                      <td>{{sexo[0].nobi}}%</td>
+                      <td id="numsexonobi"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><img src="/elementos/iconos_estadisticas/PNUD 2-23.png" style="width:25px"><p class="tabla-p">NS/NR</p></td>
+                      <td>{{sexo[0].nsnr}}%</td>
+                      <td id="numsexonsnr"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="col-lg-12 linea_azul"></div>
 
               <div class="col-lg-4">
                 <div>
@@ -189,6 +240,40 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script>
+    // Paso 1: Obtener el valor del primer div
+    var stringDiv1 = document.getElementById("numtotalstring").innerText;
+
+    // Paso 2: Eliminar caracteres no numéricos
+    var cleanString = stringDiv1.replace(/[^0-9]/g, '');
+
+    // Paso 3: Convertir a entero
+    var intValue = parseInt(cleanString, 10);
+
+    // Paso 4: Asignar el entero al segundo div
+    document.getElementById("numtotal").innerText = intValue;
+  </script>
+
+  <script>
+    var numtotal = document.getElementById("numtotal").innerText;
+
+    var numsexofem = document.getElementById("sexofem").innerText;
+    var numtotalsexofem = (numtotal * numsexofem) / 100
+    document.getElementById("numsexofem").innerText = numtotalsexofem.toLocaleString();
+
+    var numsexomasc = document.getElementById("sexomasc").innerText;
+    var numtotalsexomasc = (numtotal * numsexomasc) / 100
+    document.getElementById("numsexomasc").innerText = numtotalsexomasc.toLocaleString();
+
+    var numsexonobi = document.getElementById("sexonobi").innerText;
+    var numtotalsexonobi = (numtotal * numsexonobi) / 100
+    document.getElementById("numsexonobi").innerText = numtotalsexonobi.toLocaleString();
+
+    var numsexonsnr = document.getElementById("sexonsnr").innerText;
+    var numtotalsexonsnr = (numtotal * numsexonsnr) / 100
+    document.getElementById("numsexonsnr").innerText = numtotalsexonsnr.toLocaleString();
+  </script>
+
+  <script>
     // JavaScript para grafica de sexo
 
 
@@ -224,7 +309,7 @@
           position: 'right'
         },
         title: {
-          display: true,
+          display: false,
           text: 'Porcentaje de individuos según el Sexo',
           color: '#46495F',
           font: {

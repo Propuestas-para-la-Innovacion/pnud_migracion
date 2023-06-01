@@ -19620,3 +19620,31 @@ label.checkbox {
   padding: 20px 40px;
   width: fit-content;
 }
+
+.center-c{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.tabla-p{
+  font-size:18px;
+  font-weight: 500!important;
+  color:#19486a!important
+}
+
+.tabla-estadisticas tbody tr{
+  border-bottom: 0.5px solid #19486a;
+}
+
+.tabla-estadisticas tbody tr td{
+  margin-left: auto;
+  text-align: end;
+}
+
+.linea_azul{
+  width: 100%;
+  border-bottom: 1px solid #19486a;
+  height: 10px;
+  margin: 20px 0 40px 0;
+}
