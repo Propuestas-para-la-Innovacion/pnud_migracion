@@ -239,7 +239,7 @@ li {
 
 body {
   line-height: 1.5;
-  color: #46495F!important;
+  color: #19486a!important;
   font-family: "Arvo-Regular", sans-serif !important;
 }
 
@@ -19630,7 +19630,11 @@ label.checkbox {
 .tabla-p{
   font-size:18px;
   font-weight: 500!important;
-  color:#19486a!important
+  color:#19486a!important;
+}
+
+.tabla-estadisticas{
+  width: 100%;
 }
 
 .tabla-estadisticas tbody tr{
@@ -19647,4 +19651,12 @@ label.checkbox {
   border-bottom: 1px solid #19486a;
   height: 10px;
   margin: 20px 0 40px 0;
+}
+
+.linea_azul_vertical{
+  border-right: 1px solid #19486a;
+}
+
+.p-5-nb{
+  padding: 5% 5% 0 5%;
 }

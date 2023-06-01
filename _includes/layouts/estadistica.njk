@@ -110,29 +110,247 @@
 
               <div class="col-lg-12 linea_azul"></div>
 
-              <div class="col-lg-4">
-                <div>
-                  <canvas id="edad"></canvas>
-                </div>   
+              <div class="col-lg-6 linea_azul_vertical p-5-nb">
+                
+                <div class="d-flex align-items-center"><img src="/elementos/iconos_estadisticas/PNUD 2-16.png" style="margin-right:15px"><h3>Edad</h3></div>
+                <br>
+                <p>Se utilizan rangos de edad de la persona de acuerdo con estándares de Naciones Unidas</p>
+                <br>
+                <table class="tabla-estadisticas">
+                  <tbody>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">0-10 niñez</p></td>
+                      <td>{{edad[0].0a10}}%</td>
+                      <td id="numedad0a10"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">11-17 adolescencia</p></td>
+                      <td>{{edad[0].11a17}}%</td>
+                      <td id="numedad11a17"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">18-24 jóvenes adultos</p></td>
+                      <td>{{edad[0].18a24}}%</td>
+                      <td id="numedad18a24"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">25-34 adultos</p></td>
+                      <td>{{edad[0].25a34}}%</td>
+                      <td id="numedad25a34"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">35-44</p></td>
+                      <td>{{edad[0].35a44}}%</td>
+                      <td id="numedad35a44"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">45-54</p></td>
+                      <td>{{edad[0].45a54}}%</td>
+                      <td id="numedad45a54"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">55-64</p></td>
+                      <td>{{edad[0].55a64}}%</td>
+                      <td id="numedad55a64"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">65-74 adultos mayores</p></td>
+                      <td>{{edad[0].65a74}}%</td>
+                      <td id="numedad65a74"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">75-84</p></td>
+                      <td>{{edad[0].75a84}}%</td>
+                      <td id="numedad75a84"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">85+</p></td>
+                      <td>{{edad[0].85mas}}%</td>
+                      <td id="numedad85mas"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">NS/NR</p></td>
+                      <td>{{edad[0].nsnr}}%</td>
+                      <td id="numedadnsnr"></td>
+                    </tr>
+                    <tr>
+                  </tbody>
+                </table>
+                <canvas id="edad"></canvas>
+                
               </div>
 
-              <div class="col-lg-4">
-                <div>
-                  <canvas id="nacionalidad"></canvas>
-                </div>   
+              <div class="col-lg-6 p-5-nb">
+                <div class="d-flex align-items-center"><img src="/elementos/iconos_estadisticas/PNUD 2-18.png" style="margin-right:15px"><h3>País de Origen</h3></div>
+                <br>
+                <p>País de Origen de la persona</p>
+                <br><br>
+                <table class="tabla-estadisticas">
+                  <tbody>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Guatemala</p></td>
+                      <td>{{paisorigen[0].gua}}%</td>
+                      <td id="numpogua"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Honduras</p></td>
+                      <td>{{paisorigen[0].hon}}%</td>
+                      <td id="numpohon"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">El Salvador</p></td>
+                      <td>{{paisorigen[0].sal}}%</td>
+                      <td id="numposal"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Haití</p></td>
+                      <td>{{paisorigen[0].hai}}%</td>
+                      <td id="numpohai"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Ecuador</p></td>
+                      <td>{{paisorigen[0].ecu}}%</td>
+                      <td id="numpoecu"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Venezuela</p></td>
+                      <td>{{paisorigen[0].ven}}%</td>
+                      <td id="numpoven"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Colombia</p></td>
+                      <td>{{paisorigen[0].col}}%</td>
+                      <td id="numpocol"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">República Dominicana</p></td>
+                      <td>{{paisorigen[0].repdom}}%</td>
+                      <td id="numporepdom"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Otros</p></td>
+                      <td>{{paisorigen[0].otros}}%</td>
+                      <td id="numpootros"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">NS/NR</p></td>
+                      <td>{{paisorigen[0].nsnr}}%</td>
+                      <td id="numponsnr"></td>
+                    </tr>
+                    <tr>
+                  </tbody>
+                </table>
+                <canvas id="paisorigen"></canvas>
+                  
               </div>
 
-              <div class="col-lg-6">
-                <div>
-                  <canvas id="paisorigen"></canvas>
-                </div>   
+              <div class="col-lg-12 linea_azul"></div>
+
+              <div class="col-lg-6 linea_azul_vertical p-5-nb">
+                <div class="d-flex align-items-center"><img src="/elementos/iconos_estadisticas/PNUD 2-17.png" style="margin-right:15px"><h3>País Destino</h3></div>
+                <br>
+                <p>País de Destino de la persona</p>
+                <br>
+                <table class="tabla-estadisticas">
+                  <tbody>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Estados Unidos</p></td>
+                      <td>{{paisdestino[0].usa}}%</td>
+                      <td id="numpdusa"></td>
+                    </tr>
+                    
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">México</p></td>
+                      <td>{{paisdestino[0].mex}}%</td>
+                      <td id="numpdmex"></td>
+                    </tr>
+
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Canadá</p></td>
+                      <td>{{paisdestino[0].can}}%</td>
+                      <td id="numpdcan"></td>
+                    </tr>
+
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Otros</p></td>
+                      <td>{{paisdestino[0].otros}}%</td>
+                      <td id="numpdotros"></td>
+                    </tr>
+
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">NS/NR</p></td>
+                      <td>{{paisdestino[0].nsnr}}%</td>
+                      <td id="numpdnsnr"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <canvas id="paisdestino"></canvas>  
               </div>
 
-              <div class="col-lg-6">
-                <div>
-                  <canvas id="paisdestino"></canvas>
-                </div>   
+              <div class="col-lg-6 p-5-nb">
+                <div class="d-flex align-items-center"><img src="/elementos/iconos_estadisticas/PNUD 2-17.png" style="margin-right:15px"><h3>País Destino</h3></div>
+                <br>
+                <p>País de Nacimiento de la persona</p>
+                <br>
+                <table class="tabla-estadisticas">
+                  <tbody>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Guatemala</p></td>
+                      <td>{{nacionalidad[0].gua}}%</td>
+                      <td id="numnacgua"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Honduras</p></td>
+                      <td>{{nacionalidad[0].hon}}%</td>
+                      <td id="numnachon"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">El Salvador</p></td>
+                      <td>{{nacionalidad[0].sal}}%</td>
+                      <td id="numnacsal"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Haití</p></td>
+                      <td>{{nacionalidad[0].hai}}%</td>
+                      <td id="numnachai"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Ecuador</p></td>
+                      <td>{{nacionalidad[0].ecu}}%</td>
+                      <td id="numnacecu"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Venezuela</p></td>
+                      <td>{{nacionalidad[0].ven}}%</td>
+                      <td id="numnacven"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Colombia</p></td>
+                      <td>{{nacionalidad[0].col}}%</td>
+                      <td id="numnaccol"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">República Dominicana</p></td>
+                      <td>{{nacionalidad[0].repdom}}%</td>
+                      <td id="numnacrepdom"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">Otros</p></td>
+                      <td>{{nacionalidad[0].otros}}%</td>
+                      <td id="numnacotros"></td>
+                    </tr>
+                    <tr>
+                      <td class="d-flex"><p class="tabla-p">NS/NR</p></td>
+                      <td>{{nacionalidad[0].nsnr}}%</td>
+                      <td id="numnacnsnr"></td>
+                    </tr>
+                    <tr>
+                  </tbody>
+                </table>
+                <canvas id="nacionalidad"></canvas> 
               </div>
+
+              
 
             </div>
           </div>
@@ -256,6 +474,7 @@
   <script>
     var numtotal = document.getElementById("numtotal").innerText;
 
+    // sexo
     var numsexofem = document.getElementById("sexofem").innerText;
     var numtotalsexofem = (numtotal * numsexofem) / 100
     document.getElementById("numsexofem").innerText = numtotalsexofem.toLocaleString();
@@ -271,6 +490,158 @@
     var numsexonsnr = document.getElementById("sexonsnr").innerText;
     var numtotalsexonsnr = (numtotal * numsexonsnr) / 100
     document.getElementById("numsexonsnr").innerText = numtotalsexonsnr.toLocaleString();
+
+    //edad
+    var numedad0a10 = document.getElementById("edad0a10").innerText;
+    var numtotaledad0a10 = (numtotal * numedad0a10) / 100
+    document.getElementById("numedad0a10").innerText = numtotaledad0a10.toLocaleString();
+
+    var numedad11a17 = document.getElementById("edad11a17").innerText;
+    var numtotaledad11a17 = (numtotal * numedad11a17) / 100
+    document.getElementById("numedad11a17").innerText = numtotaledad11a17.toLocaleString();
+
+    var numedad18a24 = document.getElementById("edad18a24").innerText;
+    var numtotaledad18a24 = (numtotal * numedad18a24) / 100
+    document.getElementById("numedad18a24").innerText = numtotaledad18a24.toLocaleString();
+
+    var numedad25a34 = document.getElementById("edad25a34").innerText;
+    var numtotaledad25a34 = (numtotal * numedad25a34) / 100
+    document.getElementById("numedad25a34").innerText = numtotaledad25a34.toLocaleString();
+
+    var numedad35a44 = document.getElementById("edad35a44").innerText;
+    var numtotaledad35a44 = (numtotal * numedad35a44) / 100
+    document.getElementById("numedad35a44").innerText = numtotaledad35a44.toLocaleString();
+
+    var numedad45a54 = document.getElementById("edad45a54").innerText;
+    var numtotaledad45a54 = (numtotal * numedad45a54) / 100
+    document.getElementById("numedad45a54").innerText = numtotaledad45a54.toLocaleString();
+
+    var numedad55a64 = document.getElementById("edad55a64").innerText;
+    var numtotaledad55a64 = (numtotal * numedad55a64) / 100
+    document.getElementById("numedad55a64").innerText = numtotaledad55a64.toLocaleString();
+
+    var numedad65a74 = document.getElementById("edad65a74").innerText;
+    var numtotaledad65a74 = (numtotal * numedad65a74) / 100
+    document.getElementById("numedad65a74").innerText = numtotaledad65a74.toLocaleString();
+
+    var numedad75a84 = document.getElementById("edad75a84").innerText;
+    var numtotaledad75a84 = (numtotal * numedad75a84) / 100
+    document.getElementById("numedad75a84").innerText = numtotaledad75a84.toLocaleString();
+
+    var numedad85mas = document.getElementById("edad85mas").innerText;
+    var numtotaledad85mas = (numtotal * numedad85mas) / 100
+    document.getElementById("numedad85mas").innerText = numtotaledad85mas.toLocaleString();
+
+    var numedadnsnr = document.getElementById("edadnsnr").innerText;
+    var numtotaledansnr = (numtotal * numedadnsnr) / 100
+    document.getElementById("numedadnsnr").innerText = numtotaledansnr.toLocaleString();
+
+    // pais de origen
+
+    var numepogua = document.getElementById("origengua").innerText;
+    var numtotalpogua = (numtotal * numepogua) / 100
+    document.getElementById("numpogua").innerText = numtotalpogua.toLocaleString();
+
+    var numepohon = document.getElementById("origenhon").innerText;
+    var numtotalpohon = (numtotal * numepohon) / 100
+    document.getElementById("numpohon").innerText = numtotalpohon.toLocaleString();
+
+    var numeposal = document.getElementById("origensal").innerText;
+    var numtotalposal = (numtotal * numeposal) / 100
+    document.getElementById("numposal").innerText = numtotalposal.toLocaleString();
+
+    var numepohai = document.getElementById("origenhai").innerText;
+    var numtotalpohai = (numtotal * numepohai) / 100
+    document.getElementById("numpohai").innerText = numtotalpohai.toLocaleString();
+
+    var numepoecu = document.getElementById("origenecu").innerText;
+    var numtotalpoecu = (numtotal * numepoecu) / 100
+    document.getElementById("numpoecu").innerText = numtotalpoecu.toLocaleString();
+
+    var numepoven = document.getElementById("origenven").innerText;
+    var numtotalpoven = (numtotal * numepoven) / 100
+    document.getElementById("numpoven").innerText = numtotalpoven.toLocaleString();
+
+    var numepocol = document.getElementById("origencol").innerText;
+    var numtotalpocol = (numtotal * numepocol) / 100
+    document.getElementById("numpocol").innerText = numtotalpocol.toLocaleString();
+
+    var numeporepdom = document.getElementById("origenrepdom").innerText;
+    var numtotalporepdom = (numtotal * numeporepdom) / 100
+    document.getElementById("numporepdom").innerText = numtotalporepdom.toLocaleString();
+
+    var numepootros = document.getElementById("origenotros").innerText;
+    var numtotalpootros = (numtotal * numepootros) / 100
+    document.getElementById("numpootros").innerText = numtotalpootros.toLocaleString();
+
+    var numeponsnr = document.getElementById("origennsnr").innerText;
+    var numtotalponsnr = (numtotal * numeponsnr) / 100
+    document.getElementById("numponsnr").innerText = numtotalponsnr.toLocaleString();
+
+    // pais destino
+
+    var numepdusa = document.getElementById("destinousa").innerText;
+    var numtotalpdusa = (numtotal * numepdusa) / 100
+    document.getElementById("numpdusa").innerText = numtotalpdusa.toLocaleString();
+
+    var numepdmex = document.getElementById("destinomex").innerText;
+    var numtotalpdmex = (numtotal * numepdmex) / 100
+    document.getElementById("numpdmex").innerText = numtotalpdmex.toLocaleString();
+
+    var numepdcan = document.getElementById("destinocan").innerText;
+    var numtotalpdcan = (numtotal * numepdcan) / 100
+    document.getElementById("numpdcan").innerText = numtotalpdcan.toLocaleString();
+
+    var numepdotros = document.getElementById("destinootros").innerText;
+    var numtotalpdotros = (numtotal * numepdotros) / 100
+    document.getElementById("numpdotros").innerText = numtotalpdotros.toLocaleString();
+
+    var numepdnsnr = document.getElementById("destinonsnr").innerText;
+    var numtotalpdnsnr = (numtotal * numepdnsnr) / 100
+    document.getElementById("numpdnsnr").innerText = numtotalpdnsnr.toLocaleString();
+
+    // pais de nacionalidad
+
+    var numenacgua = document.getElementById("nacgua").innerText;
+    var numtotalnacgua = (numtotal * numenacgua) / 100
+    document.getElementById("numnacgua").innerText = numtotalnacgua.toLocaleString();
+
+    var numenachon = document.getElementById("nachon").innerText;
+    var numtotalnachon = (numtotal * numenachon) / 100
+    document.getElementById("numnachon").innerText = numtotalnachon.toLocaleString();
+
+    var numenacsal = document.getElementById("nacsal").innerText;
+    var numtotalnacsal = (numtotal * numenacsal) / 100
+    document.getElementById("numnacsal").innerText = numtotalnacsal.toLocaleString();
+
+    var numenachai = document.getElementById("nachai").innerText;
+    var numtotalnachai = (numtotal * numenachai) / 100
+    document.getElementById("numnachai").innerText = numtotalnachai.toLocaleString();
+
+    var numenacecu = document.getElementById("nacecu").innerText;
+    var numtotalnacecu = (numtotal * numenacecu) / 100
+    document.getElementById("numnacecu").innerText = numtotalnacecu.toLocaleString();
+
+    var numenacven = document.getElementById("nacven").innerText;
+    var numtotalnacven = (numtotal * numenacven) / 100
+    document.getElementById("numnacven").innerText = numtotalnacven.toLocaleString();
+
+    var numenaccol = document.getElementById("naccol").innerText;
+    var numtotalnaccol = (numtotal * numenaccol) / 100
+    document.getElementById("numnaccol").innerText = numtotalnaccol.toLocaleString();
+
+    var numenacrepdom = document.getElementById("nacrepdom").innerText;
+    var numtotalnacrepdom = (numtotal * numenacrepdom) / 100
+    document.getElementById("numnacrepdom").innerText = numtotalnacrepdom.toLocaleString();
+
+    var numenacotros = document.getElementById("nacotros").innerText;
+    var numtotalnacotros = (numtotal * numenacotros) / 100
+    document.getElementById("numnacotros").innerText = numtotalnacotros.toLocaleString();
+
+    var numenacnsnr = document.getElementById("nacnsnr").innerText;
+    var numtotalnacnsnr = (numtotal * numenacnsnr) / 100
+    document.getElementById("numnacnsnr").innerText = numtotalnacnsnr.toLocaleString();
+
   </script>
 
   <script>
@@ -354,7 +725,7 @@
       labels: ['0-10 niñez', '11-17 adolescencia', '18-24 jóvenes adultos', '25-34 adultos', '35-44', '45-54', '55-64', '65-74 adultos mayores', '75-84', '85+', 'NS/NR'],
       datasets: [{
         data: [edad0a10, edad11a17, edad18a24, edad25a34, edad35a44, edad45a54, edad55a64, edad65a74, edad75a84, edad85mas, edadnsnr],
-        backgroundColor: ['#84B8DC', '#2A8BCF', '#0569B0', '#034675', '#023F6A'],
+        backgroundColor: ['#D4F4FF', '#B3E0F4', '#84B8DC', '#2A8BCF', '#1B7FBC','#0569B0', '#034675', '#023F6A', '#052F49', '#032130'],
       }]
     };
 
@@ -377,7 +748,7 @@
           position: 'right'
         },
         title: {
-          display: true,
+          display: false,
           text: 'Edad',
           color: '#46495F',
           font: {
@@ -421,7 +792,7 @@
       labels: ['Colombia', 'República Dominicana', 'Honduras', 'Haití', 'Guatemala', 'Ecuador', 'El Salvador', 'Venezuela', 'Otros', 'NS/NR'],
       datasets: [{
         data: [naccol, nacrepdom, nachon, nachai, nacgua, nacecu, nacsal, nacven, nacotros, nacnsnr],
-        backgroundColor: ['#84B8DC', '#2A8BCF', '#0569B0', '#034675', '#023F6A'],
+        backgroundColor: ['#D4F4FF', '#B3E0F4', '#84B8DC', '#2A8BCF', '#1B7FBC','#0569B0', '#034675', '#023F6A', '#052F49', '#032130'],
       }]
     };
 
@@ -444,7 +815,7 @@
           position: 'right'
         },
         title: {
-          display: true,
+          display: false,
           text: 'Nacionalidad',
           color: '#46495F',
           font: {
@@ -488,7 +859,7 @@
       labels: ['Colombia', 'República Dominicana', 'Honduras', 'Haití', 'Guatemala', 'Ecuador', 'El Salvador', 'Venezuela', 'Otros', 'NS/NR'],
       datasets: [{
         data: [origencol, origenrepdom, origenhon, origenhai, origengua, origenecu, origensal, origenven, origenotros, origennsnr],
-        backgroundColor: ['#84B8DC', '#2A8BCF', '#0569B0', '#034675', '#023F6A'],
+        backgroundColor: ['#D4F4FF', '#B3E0F4', '#84B8DC', '#2A8BCF', '#1B7FBC','#0569B0', '#034675', '#023F6A', '#052F49', '#032130'],
       }]
     };
 
@@ -511,7 +882,7 @@
           position: 'right'
         },
         title: {
-          display: true,
+          display: false,
           text: 'País de origen',
           color: '#46495F',
           font: {
@@ -548,7 +919,7 @@
 
 
     var datos = {
-      labels: ['Estados Unidos', 'México', 'Canada', 'Otros', 'NS/NR'],
+      labels: ['Estados Unidos', 'México', 'Canadá', 'Otros', 'NS/NR'],
       datasets: [{
         data: [destinousa, destinomex, destinocan, destinootros, destinonsnr],
         backgroundColor: ['#84B8DC', '#2A8BCF', '#0569B0', '#034675', '#023F6A'],
@@ -574,7 +945,7 @@
           position: 'right'
         },
         title: {
-          display: true,
+          display: false,
           text: 'País de destino',
           color: '#46495F',
           font: {
