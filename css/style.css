@@ -19641,6 +19641,10 @@ label.checkbox {
   border-bottom: 0.5px solid #19486a;
 }
 
+.tabla-estadisticas tbody tr:last-child{
+  border-bottom: none;
+}
+
 .tabla-estadisticas tbody tr td{
   margin-left: auto;
   text-align: end;
