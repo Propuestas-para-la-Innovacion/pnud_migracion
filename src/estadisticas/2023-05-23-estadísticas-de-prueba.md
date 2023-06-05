@@ -1,7 +1,7 @@
 ---
 title: Estadísticas de Prueba
 ano: "2020"
-fuente: fuente de prueba
+fuente: Municipalidad de Esquipulas
 numeroregistrado: 45,000
 sexo:
   - fem: 25
