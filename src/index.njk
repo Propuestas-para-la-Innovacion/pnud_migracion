@@ -59,11 +59,11 @@ permalink: "index.html"
 						{% for estadistica in collections.estadisticas | limit(1)%}
 						<div class="col-lg-6 text-center">
 							
-							<h1 style="font-size:65px;color:#19486a!important">{{estadistica.data.numeroregistrado}}</h1>
-							<p style="color:#19486a!important">personas</p>
-							<br>
+							<h1 style="font-size:65px;color:#19486a!important;font-weight:800">{{estadistica.data.numeroregistrado}}</h1>
+							<h2 style="font-size:20px;color:#19486a!important;font-weight:600">personas</h2>
+							
 							<h5 style="font-size:18px">(Fuente: {{estadistica.data.fuente}})</h5>
-							<br><br>
+							<br>
 							<a href="{{estadistica.url}}" class="btn">Ver todas las estadísticas</a>
 							
 						</div>
@@ -147,7 +147,7 @@ permalink: "index.html"
 
                         <div class="col-xl-8 col-lg-8 offset-lg-2 offset-xl-2">
 							<div class="heading-block center">
-								<h2> Iniciativas y Alianzas </h2>
+								<h2 style="color:#19486a"> Iniciativas y Alianzas </h2>
 							</div>
                                 
                         </div>

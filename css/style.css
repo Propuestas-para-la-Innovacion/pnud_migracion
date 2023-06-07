@@ -89,66 +89,34 @@
 ---------------------------------------------------------------- */
 
 @font-face {
-  font-family: "Metropolis-Black";
+  font-family: "Lora-Bold";
 
-  src: url("/elementos/ELEMENTOS/FONT/Metropolis-Black.otf");
+  src: url("/css/fonts/newfonts/Lora-Bold.ttf");
 }
 
 @font-face {
-  font-family: "Metropolis-Bold";
+  font-family: "Lora-Medium";
 
-  src: url("/elementos/ELEMENTOS/FONT/Metropolis-Bold.otf");
+  src: url("/css/fonts/newfonts/Lora-Medium.ttf");
 }
 
 @font-face {
-  font-family: "Metropolis-ExtraBold";
+  font-family: "Lora-Regular";
 
-  src: url("/elementos/ELEMENTOS/FONT/Metropolis-ExtraBold.otf");
+  src: url("/css/fonts/newfonts/Lora-Regular.ttf");
 }
 
 @font-face {
-  font-family: "Metropolis-Medium";
+  font-family: "Lora-SemiBold";
 
-  src: url("/elementos/ELEMENTOS/FONT/Metropolis-Medium.otf");
+  src: url("/css/fonts/newfonts/Lora-SemiBold.ttf");
 }
 
 @font-face {
-  font-family: "Metropolis-Regular";
+  font-family: "Proximanova-Regular";
 
-  src: url("/elementos/ELEMENTOS/FONT/Metropolis-Regular.otf");
+  src: url("/css/fonts/newfonts/proximanova-regular.otf");
 }
-
-@font-face {
-  font-family: "Metropolis-SemiBold";
-
-  src: url("/elementos/ELEMENTOS/FONT/Metropolis-SemiBold.otf");
-}
-
-@font-face {
-  font-family: "Arvo-Bold";
-
-  src: url("/elementos/ELEMENTOS/FONT/Arvo-Bold.ttf");
-}
-
-@font-face {
-  font-family: "Arvo-Regular";
-
-  src: url("/elementos/ELEMENTOS/FONT/Arvo-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Nunito-Bold";
-
-  src: url("/elementos/ELEMENTOS/FONT/NUNITO/Nunito-Bold.ttf");
-}
-
-@font-face {
-  font-family: "Nunito-Regular";
-
-  src: url("/elementos/ELEMENTOS/FONT/NUNITO/Nunito-Regular.ttf");
-}
-
-
 
 /* ----------------------------------------------------------------
 	Bootstrap Adjustments
@@ -240,7 +208,7 @@ li {
 body {
   line-height: 1.5;
   color: #19486a!important;
-  font-family: "Arvo-Regular", sans-serif !important;
+  font-family: "Proximanova-Regular", sans-serif !important;
 }
 
 a {
@@ -281,7 +249,7 @@ h6 {
   font-weight: 600;
   line-height: 1.5;
   margin: 0 0 30px 0;
-  font-family: "Arvo-Bold", sans-serif !important;
+  font-family: "Lora-Bold";
 }
 
 h5,
@@ -19617,8 +19585,9 @@ label.checkbox {
 .titulo_estadisticas{
   color: #19486a!important;
   background-color: #fff;
-  padding: 20px 40px;
+  padding: 10px 30px;
   width: fit-content;
+  margin: auto;
 }
 
 .center-c{
