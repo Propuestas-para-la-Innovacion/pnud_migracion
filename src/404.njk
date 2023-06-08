@@ -195,42 +195,7 @@ permalink: "404.html"
 
 		
 
-		<!-- Explicativos
-		============================================= -->
-
-			<!--div class="section py-6 my-6" style="background-color: #e8f0f9">
-				<div class="content-wrap">
-					<div class="container clearfix" >
-						<h1 style="font-size:30px; font-weight:700; margin-bottom:30px">Explicativos</h1>
-
-						<div class="row ">
-							{% for explicativo in collections.explicativos | reverse %}
-							<div class="col-md-4 col-lg-4 col-sm-12 " style="margin:10px 0!important">
-								<a class="link_explicativo" href="{{explicativo.url}}" ><div class="cuadro_explicativo">
-									<img width="12%" style="margin-right:25px" src="{{explicativo.data.icono_explicativo}}">
-									<h2>{{explicativo.data.title}}</h2>
-								</div></a>
-							</div>
-							{% endfor %}
-							
-						</div>
-					</div>
-				</div>
-			</div-->
-
-			<!-- TikToks
-			============================================= >
-			
-			<div class="container my-4">
-				<div class="row mb-5">
-					<h2 class="font-bold text-4xl border-b-2 border-blue-500 mb-4 pb-4" style="text-align:left;margin:1rem 0">Tik Toks</h2>
-					{% for tiktok in collections.tiktoksHighlighted | limit(3)%}
-					<div class="col-lg-4 col-sm-12 col-md-6 p-0">
-						{{tiktok.data.enlace | safe}}
-					</div>
-					{% endfor %}
-				</div>
-			</div-->
+	
 
 
 		</section><!-- #content end -->
