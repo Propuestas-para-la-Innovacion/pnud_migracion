@@ -51,356 +51,317 @@
         <div class="container clearfix my-4">
           <div class="row p-0">
             <div class="tab my-4 p-0">
-              <button class="tablinks btn" onclick="openTab(event, 'ano2020')" id="defaultOpen">2020</button>
-              <button class="tablinks btn" onclick="openTab(event, 'ano2021')">2021</button>
+              {% for estadistica in collections.estadisticas %}
+              {% if page.url == estadistica.url %}
+              <a href="{{estadistica.url}}" class="btn active">{{estadistica.data.ano}}</a>
+              {% else%}
+              <a href="{{estadistica.url}}" class="btn">{{estadistica.data.ano}}</a>
+              {% endif %}
+              {% endfor %}
             </div>
           </div>
         </div>
 
-        <div id="ano2020" class="tabcontent" >
-          <div class="container clearfix my-4">
-            <div class="row">
 
-              <div class="col-lg-4 center-c">
-                <h1 id="numtotalstring" style="font-size:70px;color:#19486a!important">{{numeroregistrado}}</h1>
-                <br>
-                <p style="font-size:20px;font-weight: 400!important;color:#19486a!important">
-                  Número de individuos en situación de movilidad Humana
-                  registrados en esquipulas
-                </p>
-                <br>
-                <p style="font-size:20px;font-weight: 400!important;color:#19486a!important">Fuente: {{fuente}}</p>
-                <br>
-              </div>
+        <div class="container clearfix my-4">
+          <div class="row">
 
-              <div id="numtotal" style="display:none"></div>
+            <div class="col-lg-4 center-c">
+              <h1 id="numtotalstring" style="font-size:70px;color:#19486a!important">{{numeroregistrado}}</h1>
+              <br>
+              <p style="font-size:20px;font-weight: 400!important;color:#19486a!important">
+                Número de individuos en situación de movilidad Humana
+                registrados en esquipulas
+              </p>
+              <br>
+              <p style="font-size:20px;font-weight: 400!important;color:#19486a!important">Fuente: {{fuente}}</p>
+              <br>
+            </div>
+
+            <div id="numtotal" style="display:none"></div>
+            
+            <div class="col-lg-4">
+              <div>
+                <canvas id="sexo"></canvas>
+              </div>   
+            </div>
+
+            <div class="col-lg-4 center-c">
+              <p style="font-size:18px;font-weight: 600!important;color:#19486a!important">Sexo de la persona, según auto identificación</p>
+              <br>
+              <table class="tabla-estadisticas">
+                <tbody>
+                  <tr>
+                    <td class="d-flex"><img src="/elementos/iconos_estadisticas/PNUD 2-20.png" style="width:25px"><p class="tabla-p">Femenino</p></td>
+                    <td>{{sexo[0].fem}}%</td>
+                    <td id="numsexofem"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><img src="/elementos/iconos_estadisticas/PNUD 2-21.png" style="width:25px"><p class="tabla-p">Masculino</p></td>
+                    <td>{{sexo[0].masc}}%</td>
+                    <td id="numsexomasc"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><img src="/elementos/iconos_estadisticas/PNUD 2-22.png" style="width:25px"><p class="tabla-p">No Binario</p></td>
+                    <td>{{sexo[0].nobi}}%</td>
+                    <td id="numsexonobi"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><img src="/elementos/iconos_estadisticas/PNUD 2-23.png" style="width:25px"><p class="tabla-p">NS/NR</p></td>
+                    <td>{{sexo[0].nsnr}}%</td>
+                    <td id="numsexonsnr"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="col-lg-12 linea_azul"></div>
+
+            <div class="col-lg-6 linea_azul_vertical p-5-nb">
               
-              <div class="col-lg-4">
-                <div>
-                  <canvas id="sexo"></canvas>
-                </div>   
-              </div>
+              <div class="d-flex align-items-center"><img src="/elementos/iconos_estadisticas/PNUD 2-16.png" style="margin-right:15px"><h3>Rango de Edad</h3></div>
+              <br>
+              <p>Se utilizan rangos de edad de la persona de acuerdo con estándares de Naciones Unidas</p>
+              <br>
+              <table class="tabla-estadisticas">
+                <tbody>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">0-10 niñez</p></td>
+                    <td>{{edad[0].0a10}}%</td>
+                    <td id="numedad0a10"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">11-17 adolescencia</p></td>
+                    <td>{{edad[0].11a17}}%</td>
+                    <td id="numedad11a17"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">18-24 jóvenes adultos</p></td>
+                    <td>{{edad[0].18a24}}%</td>
+                    <td id="numedad18a24"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">25-34 adultos</p></td>
+                    <td>{{edad[0].25a34}}%</td>
+                    <td id="numedad25a34"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">35-44</p></td>
+                    <td>{{edad[0].35a44}}%</td>
+                    <td id="numedad35a44"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">45-54</p></td>
+                    <td>{{edad[0].45a54}}%</td>
+                    <td id="numedad45a54"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">55-64</p></td>
+                    <td>{{edad[0].55a64}}%</td>
+                    <td id="numedad55a64"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">65-74 adultos mayores</p></td>
+                    <td>{{edad[0].65a74}}%</td>
+                    <td id="numedad65a74"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">75-84</p></td>
+                    <td>{{edad[0].75a84}}%</td>
+                    <td id="numedad75a84"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">85+</p></td>
+                    <td>{{edad[0].85mas}}%</td>
+                    <td id="numedad85mas"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">NS/NR</p></td>
+                    <td>{{edad[0].nsnr}}%</td>
+                    <td id="numedadnsnr"></td>
+                  </tr>
+                  <tr>
+                </tbody>
+              </table>
+              <canvas id="edad"></canvas>
+              
+            </div>
 
-              <div class="col-lg-4 center-c">
-                <p style="font-size:18px;font-weight: 600!important;color:#19486a!important">Sexo de la persona, según auto identificación</p>
-                <br>
-                <table class="tabla-estadisticas">
-                  <tbody>
-                    <tr>
-                      <td class="d-flex"><img src="/elementos/iconos_estadisticas/PNUD 2-20.png" style="width:25px"><p class="tabla-p">Femenino</p></td>
-                      <td>{{sexo[0].fem}}%</td>
-                      <td id="numsexofem"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><img src="/elementos/iconos_estadisticas/PNUD 2-21.png" style="width:25px"><p class="tabla-p">Masculino</p></td>
-                      <td>{{sexo[0].masc}}%</td>
-                      <td id="numsexomasc"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><img src="/elementos/iconos_estadisticas/PNUD 2-22.png" style="width:25px"><p class="tabla-p">No Binario</p></td>
-                      <td>{{sexo[0].nobi}}%</td>
-                      <td id="numsexonobi"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><img src="/elementos/iconos_estadisticas/PNUD 2-23.png" style="width:25px"><p class="tabla-p">NS/NR</p></td>
-                      <td>{{sexo[0].nsnr}}%</td>
-                      <td id="numsexonsnr"></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <div class="col-lg-12 linea_azul"></div>
-
-              <div class="col-lg-6 linea_azul_vertical p-5-nb">
+            <div class="col-lg-6 p-5-nb">
+              <div class="d-flex align-items-center"><img src="/elementos/iconos_estadisticas/PNUD 2-18.png" style="margin-right:15px"><h3>País de Origen</h3></div>
+              <br>
+              <p>País de Origen de la persona</p>
+              <br><br>
+              <table class="tabla-estadisticas">
+                <tbody>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Guatemala</p></td>
+                    <td>{{paisorigen[0].gua}}%</td>
+                    <td id="numpogua"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Honduras</p></td>
+                    <td>{{paisorigen[0].hon}}%</td>
+                    <td id="numpohon"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">El Salvador</p></td>
+                    <td>{{paisorigen[0].sal}}%</td>
+                    <td id="numposal"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Haití</p></td>
+                    <td>{{paisorigen[0].hai}}%</td>
+                    <td id="numpohai"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Ecuador</p></td>
+                    <td>{{paisorigen[0].ecu}}%</td>
+                    <td id="numpoecu"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Venezuela</p></td>
+                    <td>{{paisorigen[0].ven}}%</td>
+                    <td id="numpoven"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Colombia</p></td>
+                    <td>{{paisorigen[0].col}}%</td>
+                    <td id="numpocol"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">República Dominicana</p></td>
+                    <td>{{paisorigen[0].repdom}}%</td>
+                    <td id="numporepdom"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Otros</p></td>
+                    <td>{{paisorigen[0].otros}}%</td>
+                    <td id="numpootros"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">NS/NR</p></td>
+                    <td>{{paisorigen[0].nsnr}}%</td>
+                    <td id="numponsnr"></td>
+                  </tr>
+                  <tr>
+                </tbody>
+              </table>
+              <canvas id="paisorigen"></canvas>
                 
-                <div class="d-flex align-items-center"><img src="/elementos/iconos_estadisticas/PNUD 2-16.png" style="margin-right:15px"><h3>Rango de Edad</h3></div>
-                <br>
-                <p>Se utilizan rangos de edad de la persona de acuerdo con estándares de Naciones Unidas</p>
-                <br>
-                <table class="tabla-estadisticas">
-                  <tbody>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">0-10 niñez</p></td>
-                      <td>{{edad[0].0a10}}%</td>
-                      <td id="numedad0a10"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">11-17 adolescencia</p></td>
-                      <td>{{edad[0].11a17}}%</td>
-                      <td id="numedad11a17"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">18-24 jóvenes adultos</p></td>
-                      <td>{{edad[0].18a24}}%</td>
-                      <td id="numedad18a24"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">25-34 adultos</p></td>
-                      <td>{{edad[0].25a34}}%</td>
-                      <td id="numedad25a34"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">35-44</p></td>
-                      <td>{{edad[0].35a44}}%</td>
-                      <td id="numedad35a44"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">45-54</p></td>
-                      <td>{{edad[0].45a54}}%</td>
-                      <td id="numedad45a54"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">55-64</p></td>
-                      <td>{{edad[0].55a64}}%</td>
-                      <td id="numedad55a64"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">65-74 adultos mayores</p></td>
-                      <td>{{edad[0].65a74}}%</td>
-                      <td id="numedad65a74"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">75-84</p></td>
-                      <td>{{edad[0].75a84}}%</td>
-                      <td id="numedad75a84"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">85+</p></td>
-                      <td>{{edad[0].85mas}}%</td>
-                      <td id="numedad85mas"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">NS/NR</p></td>
-                      <td>{{edad[0].nsnr}}%</td>
-                      <td id="numedadnsnr"></td>
-                    </tr>
-                    <tr>
-                  </tbody>
-                </table>
-                <canvas id="edad"></canvas>
-                
-              </div>
+            </div>
 
-              <div class="col-lg-6 p-5-nb">
-                <div class="d-flex align-items-center"><img src="/elementos/iconos_estadisticas/PNUD 2-18.png" style="margin-right:15px"><h3>País de Origen</h3></div>
-                <br>
-                <p>País de Origen de la persona</p>
-                <br><br>
-                <table class="tabla-estadisticas">
-                  <tbody>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Guatemala</p></td>
-                      <td>{{paisorigen[0].gua}}%</td>
-                      <td id="numpogua"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Honduras</p></td>
-                      <td>{{paisorigen[0].hon}}%</td>
-                      <td id="numpohon"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">El Salvador</p></td>
-                      <td>{{paisorigen[0].sal}}%</td>
-                      <td id="numposal"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Haití</p></td>
-                      <td>{{paisorigen[0].hai}}%</td>
-                      <td id="numpohai"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Ecuador</p></td>
-                      <td>{{paisorigen[0].ecu}}%</td>
-                      <td id="numpoecu"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Venezuela</p></td>
-                      <td>{{paisorigen[0].ven}}%</td>
-                      <td id="numpoven"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Colombia</p></td>
-                      <td>{{paisorigen[0].col}}%</td>
-                      <td id="numpocol"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">República Dominicana</p></td>
-                      <td>{{paisorigen[0].repdom}}%</td>
-                      <td id="numporepdom"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Otros</p></td>
-                      <td>{{paisorigen[0].otros}}%</td>
-                      <td id="numpootros"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">NS/NR</p></td>
-                      <td>{{paisorigen[0].nsnr}}%</td>
-                      <td id="numponsnr"></td>
-                    </tr>
-                    <tr>
-                  </tbody>
-                </table>
-                <canvas id="paisorigen"></canvas>
+            <div class="col-lg-12 linea_azul"></div>
+
+            <div class="col-lg-6 linea_azul_vertical p-5-nb">
+              <div class="d-flex align-items-center"><img src="/elementos/iconos_estadisticas/PNUD 2-17.png" style="margin-right:15px"><h3>País Destino</h3></div>
+              <br>
+              <p>País de Destino de la persona</p>
+              <br>
+              <table class="tabla-estadisticas">
+                <tbody>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Estados Unidos</p></td>
+                    <td>{{paisdestino[0].usa}}%</td>
+                    <td id="numpdusa"></td>
+                  </tr>
                   
-              </div>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">México</p></td>
+                    <td>{{paisdestino[0].mex}}%</td>
+                    <td id="numpdmex"></td>
+                  </tr>
 
-              <div class="col-lg-12 linea_azul"></div>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Canadá</p></td>
+                    <td>{{paisdestino[0].can}}%</td>
+                    <td id="numpdcan"></td>
+                  </tr>
 
-              <div class="col-lg-6 linea_azul_vertical p-5-nb">
-                <div class="d-flex align-items-center"><img src="/elementos/iconos_estadisticas/PNUD 2-17.png" style="margin-right:15px"><h3>País Destino</h3></div>
-                <br>
-                <p>País de Destino de la persona</p>
-                <br>
-                <table class="tabla-estadisticas">
-                  <tbody>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Estados Unidos</p></td>
-                      <td>{{paisdestino[0].usa}}%</td>
-                      <td id="numpdusa"></td>
-                    </tr>
-                    
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">México</p></td>
-                      <td>{{paisdestino[0].mex}}%</td>
-                      <td id="numpdmex"></td>
-                    </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Otros</p></td>
+                    <td>{{paisdestino[0].otros}}%</td>
+                    <td id="numpdotros"></td>
+                  </tr>
 
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Canadá</p></td>
-                      <td>{{paisdestino[0].can}}%</td>
-                      <td id="numpdcan"></td>
-                    </tr>
-
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Otros</p></td>
-                      <td>{{paisdestino[0].otros}}%</td>
-                      <td id="numpdotros"></td>
-                    </tr>
-
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">NS/NR</p></td>
-                      <td>{{paisdestino[0].nsnr}}%</td>
-                      <td id="numpdnsnr"></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <canvas id="paisdestino"></canvas>  
-              </div>
-
-              <div class="col-lg-6 p-5-nb">
-                <div class="d-flex align-items-center"><img src="/elementos/iconos_estadisticas/PNUD 2-19.png" style="margin-right:15px"><h3>País de Nacimiento</h3></div>
-                <br>
-                <p>País de Nacimiento de la persona</p>
-                <br>
-                <table class="tabla-estadisticas">
-                  <tbody>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Guatemala</p></td>
-                      <td>{{nacionalidad[0].gua}}%</td>
-                      <td id="numnacgua"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Honduras</p></td>
-                      <td>{{nacionalidad[0].hon}}%</td>
-                      <td id="numnachon"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">El Salvador</p></td>
-                      <td>{{nacionalidad[0].sal}}%</td>
-                      <td id="numnacsal"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Haití</p></td>
-                      <td>{{nacionalidad[0].hai}}%</td>
-                      <td id="numnachai"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Ecuador</p></td>
-                      <td>{{nacionalidad[0].ecu}}%</td>
-                      <td id="numnacecu"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Venezuela</p></td>
-                      <td>{{nacionalidad[0].ven}}%</td>
-                      <td id="numnacven"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Colombia</p></td>
-                      <td>{{nacionalidad[0].col}}%</td>
-                      <td id="numnaccol"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">República Dominicana</p></td>
-                      <td>{{nacionalidad[0].repdom}}%</td>
-                      <td id="numnacrepdom"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">Otros</p></td>
-                      <td>{{nacionalidad[0].otros}}%</td>
-                      <td id="numnacotros"></td>
-                    </tr>
-                    <tr>
-                      <td class="d-flex"><p class="tabla-p">NS/NR</p></td>
-                      <td>{{nacionalidad[0].nsnr}}%</td>
-                      <td id="numnacnsnr"></td>
-                    </tr>
-                    <tr>
-                  </tbody>
-                </table>
-                <canvas id="nacionalidad"></canvas> 
-              </div>
-
-              
-
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">NS/NR</p></td>
+                    <td>{{paisdestino[0].nsnr}}%</td>
+                    <td id="numpdnsnr"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <canvas id="paisdestino"></canvas>  
             </div>
+
+            <div class="col-lg-6 p-5-nb">
+              <div class="d-flex align-items-center"><img src="/elementos/iconos_estadisticas/PNUD 2-19.png" style="margin-right:15px"><h3>País de Nacimiento</h3></div>
+              <br>
+              <p>País de Nacimiento de la persona</p>
+              <br>
+              <table class="tabla-estadisticas">
+                <tbody>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Guatemala</p></td>
+                    <td>{{nacionalidad[0].gua}}%</td>
+                    <td id="numnacgua"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Honduras</p></td>
+                    <td>{{nacionalidad[0].hon}}%</td>
+                    <td id="numnachon"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">El Salvador</p></td>
+                    <td>{{nacionalidad[0].sal}}%</td>
+                    <td id="numnacsal"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Haití</p></td>
+                    <td>{{nacionalidad[0].hai}}%</td>
+                    <td id="numnachai"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Ecuador</p></td>
+                    <td>{{nacionalidad[0].ecu}}%</td>
+                    <td id="numnacecu"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Venezuela</p></td>
+                    <td>{{nacionalidad[0].ven}}%</td>
+                    <td id="numnacven"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Colombia</p></td>
+                    <td>{{nacionalidad[0].col}}%</td>
+                    <td id="numnaccol"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">República Dominicana</p></td>
+                    <td>{{nacionalidad[0].repdom}}%</td>
+                    <td id="numnacrepdom"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">Otros</p></td>
+                    <td>{{nacionalidad[0].otros}}%</td>
+                    <td id="numnacotros"></td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex"><p class="tabla-p">NS/NR</p></td>
+                    <td>{{nacionalidad[0].nsnr}}%</td>
+                    <td id="numnacnsnr"></td>
+                  </tr>
+                  <tr>
+                </tbody>
+              </table>
+              <canvas id="nacionalidad"></canvas> 
+            </div>
+
+            
+
           </div>
         </div>
-
-        <div id="ano2021" class="tabcontent">
-          <div class="container clearfix my-4">
-            <div class="row">
-
-              <div class="col-lg-4">
-                <div>
-                  tab 2
-                </div>   
-              </div>
-              
-              <div class="col-lg-4">
-                <div>
-                  <canvas id="sexo2"></canvas>
-                </div>   
-              </div>
-
-              <div class="col-lg-4">
-                <div>
-                  <canvas id="edad2"></canvas>
-                </div>   
-              </div>
-
-              <div class="col-lg-4">
-                <div>
-                  <canvas id="nacionalidad2"></canvas>
-                </div>   
-              </div>
-
-              <div class="col-lg-6">
-                <div>
-                  <canvas id="paisorigen2"></canvas>
-                </div>   
-              </div>
-
-              <div class="col-lg-6">
-                <div>
-                  <canvas id="paisdestino2"></canvas>
-                </div>   
-              </div>
-
-            </div>
-          </div>
-        </div>
+        
 
       </div>
     </section>
